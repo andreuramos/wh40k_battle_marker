@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Button from "./Button";
+import Button from "./Common/Button";
 
 class BattleMarker extends Component
 {

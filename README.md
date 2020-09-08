@@ -18,4 +18,6 @@ To add
 
 ## Deploy
 
-`netlify deploy --prod`, deployed to https://wh40kmarker.netlify.app
+`netlify deploy --prod`, 
+specifying `build` as the target directory
+deployed to https://wh40kmarker.netlify.app
