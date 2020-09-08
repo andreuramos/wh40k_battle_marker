@@ -3,11 +3,28 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
-.App-header {
+.Start-button {
+  background-color: red;
+  color: white;
+  font-size: x-large;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-family: "DejaVu Sans";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Start-button:hover {
+  background-color: indianred;
+}
+
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
