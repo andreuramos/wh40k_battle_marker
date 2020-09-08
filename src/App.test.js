@@ -15,7 +15,7 @@ describe('App', () => {
     expect(app.state.ongoingBattle).toBe(null);
   });
 
-  it('shows start battle button when created', () => {
+  it('shows start battle button when initially rendered', () => {
     render(<App />);
     const startBattleButton = screen.getByText(/Start Battle/i);
 
