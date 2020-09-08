@@ -6,6 +6,12 @@ Tool to track the scores in a WH40K battle
 
 `npm start`, then access to localhost:3000
 
+## Test
+
+`npm run-script test`
+
+To add
+
 ## Build
 
 `npm run-script build`
