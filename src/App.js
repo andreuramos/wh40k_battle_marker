@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import Button from "./Components/Common/Button";
 import BattleMarker from "./Components/BattleMarker";
 import Battle from "./Core/Domain/Battle";
+import Button from "./Components/Common/Button";
 import Modal from "./Components/Common/Modal";
+import PlayersNameForm from "./Components/BattleForm/PlayersNameForm";
+import Player from "./Core/Domain/Player";
 
 class App extends React.Component {
     constructor() {
@@ -14,15 +16,18 @@ class App extends React.Component {
         }
     }
 
-    startBattle() {
+    startBattle = (formData) => {
+        const player1 = new Player(formData.player1);
+        const player2 = new Player(formData.player2);
         this.setState({
-            ongoingBattle: new Battle(),
+            ongoingBattle: new Battle(player1, player2),
             buildingBattle: false
         });
     }
 
     handleEndBattle = (battle) => {
-        console.log("Battle ended", battle.startedAt());
+        console.log("Battle ended", battle.startedAt(), battle.endedAt());
+
         this.setState({ongoingBattle: null});
     }
 
@@ -55,11 +60,7 @@ class App extends React.Component {
                       show={this.state.buildingBattle}
                       onClose={this.cancelNewBattle}
                   ><div>
-                      <span>Here goes the battle form</span>
-                      <Button
-                          onClick={this.startBattle.bind(this)}
-                          text="Start Battle"
-                      />
+                      <PlayersNameForm onSubmit={this.startBattle}/>
                   </div>
                   </Modal>
               </div>

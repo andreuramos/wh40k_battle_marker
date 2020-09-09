@@ -7,15 +7,20 @@ class BattleMarker extends Component
         super(props);
         this.state = {
             battle: this.props.battle,
-            handleEndBattle: this.props.handleEndBattle
         }
+    }
+
+    handleEndBattle = () => {
+        const battle = this.state.battle;
+        battle.finish();
+        this.props.handleEndBattle(battle);
     }
 
     render() {
         return (
             <div>
-                <span>this is the battle marker for battle started at <b>{this.state.battle.startedAt().toDateString()}</b></span>
-                <Button onClick={() => this.state.handleEndBattle(this.state.battle)} text="End Battle"/>
+                <span>this is the battle marker for {this.state.battle.name()} started at <b>{this.state.battle.startedAt().toDateString()}</b></span>
+                <Button onClick={this.handleEndBattle} text="End Battle"/>
             </div>
         );
     }

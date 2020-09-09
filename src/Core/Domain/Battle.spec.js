@@ -13,4 +13,11 @@ describe('Battle', () => {
 
        expect(battle.isOver()).toBe(true);
    })
+
+    it('sets the end time when finished', () => {
+        const battle = new Battle();
+
+        battle.finish()
+        expect(battle.endedAt()).not.toBe(null);
+    })
 });
