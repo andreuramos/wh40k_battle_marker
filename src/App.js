@@ -43,26 +43,25 @@ class App extends React.Component {
                       <img src='/logo.webp' className="App-logo" alt="Under construction"/> : null
                   }
                   { this.state.ongoingBattle == null ?
-                      <div>
-                          <Button
-                              onClick={this.startBattle.bind(this)}
-                              text="Start Battle"
-                          />
-                          <div>
-                              <Button onClick={this.showModal} text="Modal Start Battle" />
-                              <Modal
-                                  title="Start new battle"
-                                  show={this.state.buildingBattle}
-                                  onClose={this.cancelNewBattle}
-                              >here goes the form</Modal>
-                          </div>
-                      </div>
+                      <Button onClick={this.showModal} text="New Battle" />
                       :
                       <BattleMarker
                           battle={this.state.ongoingBattle}
                           handleEndBattle={this.handleEndBattle}
                           />
                   }
+                  <Modal
+                      title="Configure new battle"
+                      show={this.state.buildingBattle}
+                      onClose={this.cancelNewBattle}
+                  ><div>
+                      <span>Here goes the battle form</span>
+                      <Button
+                          onClick={this.startBattle.bind(this)}
+                          text="Start Battle"
+                      />
+                  </div>
+                  </Modal>
               </div>
           </div>
       );

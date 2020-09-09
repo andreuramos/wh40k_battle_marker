@@ -1,3 +1,11 @@
+body {
+  display: flex;
+}
+
+#root {
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -5,23 +13,6 @@
 .App-logo {
   height: 20vmin;
   pointer-events: none;
-}
-
-.primary-button {
-  background-color: red;
-  color: white;
-  font-size: x-large;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
-  font-family: "DejaVu Sans";
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.primary-button:hover {
-  background-color: indianred;
 }
 
 .App-body {

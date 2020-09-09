@@ -14,8 +14,8 @@ class Modal extends Component
         return (
             <div className="modal">
                 <div className="modal-header">
-                    <span>{this.props.title}</span>
-                    { this.props.onClose !== null ? <button onClick={ e => {this.onClose(e);}}>Close</button> : null }
+                    <div className="modal-title"><span>{this.props.title}</span></div>
+                    { this.props.onClose !== null ? <div className="modal-close-button" onClick={ e => {this.onClose(e);}}>X</div> : null }
                 </div>
                 <div className="modal-body">
                     {this.props.children}
