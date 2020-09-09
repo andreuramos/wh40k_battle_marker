@@ -17,7 +17,7 @@ describe('App', () => {
 
   it('shows start battle button when initially rendered', () => {
     render(<App />);
-    const startBattleButton = screen.getByText(/Start Battle/i);
+    const startBattleButton = screen.getByText(/New Battle/i);
 
     expect(startBattleButton).toBeInTheDocument();
   });
