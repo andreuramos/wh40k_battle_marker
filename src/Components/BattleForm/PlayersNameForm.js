@@ -35,7 +35,7 @@ class PlayersNameForm extends React.Component
             <div>
                 <form className="form-group">
                     <div className="input-group">
-                        <label htmlFor="player1">Player 1 Name</label>
+                        <label htmlFor="player1">Player 1</label>
                         <input
                             className="text-input"
                             type="text"
@@ -47,7 +47,7 @@ class PlayersNameForm extends React.Component
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="player2">Player 2 Name</label>
+                        <label htmlFor="player2">Player 2</label>
                         <input
                             className="text-input"
                             type="text"
