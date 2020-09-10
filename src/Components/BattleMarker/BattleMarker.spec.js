@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import BattleMarker from "./BattleMarker";
-import Battle from "../Core/Domain/Battle";
-import Player from "../Core/Domain/Player";
+import Battle from "../../Core/Domain/Battle";
+import Player from "../../Core/Domain/Player";
 
 describe('Battle Marker', () => {
     it('shows end battle button', () => {

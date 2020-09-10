@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import BattleMarker from "./Components/BattleMarker";
+import BattleMarker from "./Components/BattleMarker/BattleMarker";
 import Battle from "./Core/Domain/Battle";
 import Button from "./Components/Common/Button";
 import Modal from "./Components/Common/Modal";
