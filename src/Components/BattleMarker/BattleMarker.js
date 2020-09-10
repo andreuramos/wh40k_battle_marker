@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Button from "../Common/Button";
 import "./BattleMarker.css";
 import PlayerBoard from "./PlayerBoard";
+import Timer from "./Timer";
 
 class BattleMarker extends Component
 {
@@ -24,9 +25,7 @@ class BattleMarker extends Component
                 <div className="marker-board">
                     <PlayerBoard player={this.state.battle.player1()} />
                     <div className="center-board">
-                        <div className="timer">
-                            TIMER
-                        </div>
+                        <Timer start={this.state.battle.startedAt()} />
                     </div>
                     <PlayerBoard player={this.state.battle.player2()} />
                 </div>
