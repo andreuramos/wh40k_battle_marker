@@ -1,4 +1,16 @@
 .timer {
     background-color: black;
     border: white solid 1px;
+    width: 200px;
+    left: -85px;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+}
+
+@media (max-width: 480px) {
+    .timer {
+        left: 0;
+        margin: 0 auto;
+    }
 }
