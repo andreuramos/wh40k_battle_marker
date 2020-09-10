@@ -1,10 +1,8 @@
 .player-board {
     display: flex;
     flex-direction: column;
-    width: -moz-calc(100% - 2em);
-    width: -webkit-calc(100% - 2em);
-    height: -moz-calc(100% - 2em);
-    height: -webkit-calc(100% - 2em);
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
     border: solid black 2px;
     margin: 1em;
 }
