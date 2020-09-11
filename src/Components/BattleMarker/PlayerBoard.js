@@ -4,20 +4,39 @@ import MissionBoard from "./MissionBoard/MissionBoard";
 
 class PlayerBoard extends React.Component
 {
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            player: this.props.player
+        }
+    }
+
+    onMissionCompleted = (mission) => {
+        const player = this.state.player;
+        player.addCompletedMission(mission);
+        this.setState({
+            player: player
+        })
+    }
+
     render() {
         return (
             <div className="player-board">
                 <div className="player-board-header">
-                    <span>{this.props.player.name()}</span>
+                    <span>{this.state.player.name()}</span>
                 </div>
                 <div className="player-board-body">
                     <div className="player-board-score">
                         <div className="player-board-score-trophy">
-                            <span>{this.props.player.score()}</span>
+                            <span>{this.state.player.score()}</span>
                         </div>
                     </div>
                     <div className="player-board-missions">
-                        <MissionBoard player={this.props.player} />
+                        <MissionBoard
+                            player={this.state.player}
+                            onAddMission={this.onMissionCompleted}
+                        />
                     </div>
                 </div>
             </div>

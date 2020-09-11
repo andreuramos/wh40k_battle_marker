@@ -26,7 +26,7 @@ class App extends React.Component {
     }
 
     handleEndBattle = (battle) => {
-        console.log("Battle ended", battle.startedAt(), battle.endedAt());
+        console.log("Battle ended", battle.startedAt(), battle.endedAt(), battle);
 
         this.setState({ongoingBattle: null});
     }
