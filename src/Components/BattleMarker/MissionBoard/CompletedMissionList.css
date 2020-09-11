@@ -1,0 +1,22 @@
+.mission-list {
+    overflow-y: scroll;
+    background-color: var(--background-color);
+    height: inherit;
+}
+
+.completed-mission {
+    width: 100%;
+    display: flex;
+}
+
+.completed-mission-name {
+    width: 80%;
+    padding-left: 1em;
+    text-align: left;
+}
+
+.completed-mission-points {
+    width: 20%;
+    padding-right: 1em;
+    text-align: right;
+}

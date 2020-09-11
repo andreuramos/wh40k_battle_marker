@@ -1,8 +1,15 @@
 .mission-board {
     margin: .25em;
+    height: 100%;
 }
 
 .mission-board-header {
     margin-left: 4em;
     margin-right: 4em;
+    height: 20%;
+}
+
+.mission-board-body {
+    padding: 1em;
+    height: 80%;
 }

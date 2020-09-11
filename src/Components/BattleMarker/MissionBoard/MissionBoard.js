@@ -3,6 +3,7 @@ import Button from "../../Common/Button";
 import Modal from "../../Common/Modal";
 import "./MissionBoard.css";
 import MissionForm from "./MissionForm";
+import CompletedMissionList from "./CompletedMissionList";
 
 class MissionBoard extends React.Component
 {
@@ -43,7 +44,7 @@ class MissionBoard extends React.Component
                     <Button onClick={this.openMissionModal} text="Complete Mission" type="secondary-button"/>
                 </div>
                 <div className="mission-board-body">
-                    list here
+                    <CompletedMissionList missions={this.state.player.completedMissions()} />
                 </div>
 
                 <Modal show={this.state.showMissionModal} title="Add a completed mission" onClose={this.closeMissionModal}>
