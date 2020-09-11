@@ -1,5 +1,6 @@
 import React from "react";
 import "./PlayerBoard.css";
+import MissionBoard from "./MissionBoard";
 
 class PlayerBoard extends React.Component
 {
@@ -16,7 +17,7 @@ class PlayerBoard extends React.Component
                         </div>
                     </div>
                     <div className="player-board-missions">
-                        <span>Add Completed mission</span>
+                        <MissionBoard player={this.props.player} />
                     </div>
                 </div>
             </div>
