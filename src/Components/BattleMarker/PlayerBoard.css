@@ -3,12 +3,13 @@
     flex-direction: column;
     width: calc(100% - 2em);
     height: calc(100% - 2em);
-    border: solid black 2px;
+    box-shadow: -0 1em 1em rgba(0,0,0,0.5);
     margin: 1em;
+    background-color: var(--background-light-color)
 }
 
 .player-board-header {
-    background-color: #404753;
+    background-color: var(--background-lighter-color);
     font-size: 50px;
     height: 10%;
 }
