@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../Common/Button";
 import Modal from "../../Common/Modal";
 import "./MissionBoard.css";
+import MissionForm from "./MissionForm";
 
 class MissionBoard extends React.Component
 {
@@ -39,7 +40,7 @@ class MissionBoard extends React.Component
                 </div>
 
                 <Modal show={this.state.showMissionModal} title="Add a completed mission" onClose={this.closeMissionModal}>
-                    Mission modal here
+                    <MissionForm />
                 </Modal>
             </div>
         )
