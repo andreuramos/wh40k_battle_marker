@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Common/Button";
-import Modal from "../Common/Modal";
+import Button from "../../Common/Button";
+import Modal from "../../Common/Modal";
 import "./MissionBoard.css";
 
 class MissionBoard extends React.Component

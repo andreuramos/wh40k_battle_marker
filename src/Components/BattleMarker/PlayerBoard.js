@@ -1,6 +1,6 @@
 import React from "react";
 import "./PlayerBoard.css";
-import MissionBoard from "./MissionBoard";
+import MissionBoard from "./MissionBoard/MissionBoard";
 
 class PlayerBoard extends React.Component
 {
