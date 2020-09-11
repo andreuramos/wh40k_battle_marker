@@ -4,8 +4,9 @@ import './Button.css';
 class Button extends Component
 {
     render() {
+        const classes = "button " + (this.props.type ? this.props.type: "primary-button");
         return <div
-            className="primary-button"
+            className={classes}
             onClick={this.props.onClick}
             id={this.props.id}
         >{this.props.text}</div>;
