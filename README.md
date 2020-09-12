@@ -1,4 +1,4 @@
-# Warhammer 40k Battle Marker
+# Warhammer 40k Scoreboard
 
 Tool to track the scores in a WH40K battle
 
