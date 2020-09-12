@@ -37,7 +37,7 @@ class MissionForm extends React.Component
                         <input
                             className="text-input"
                             type="text"
-                            name="mission-name"
+                            name="missionName"
                             autoComplete="off"
                             value={this.state.missionName}
                             onChange={this.handleChange}
@@ -45,11 +45,11 @@ class MissionForm extends React.Component
                     </div>
 
                     <div className="input-group">
-                        <label htmlFor="mission-points">Puntos</label>
+                        <label htmlFor="mission-points">Points</label>
                         <input
                             className="text-input"
                             type="number"
-                            name="mission-points"
+                            name="missionPoints"
                             autoComplete="off"
                             value={this.state.missionPoints}
                             onChange={this.handleChange}
