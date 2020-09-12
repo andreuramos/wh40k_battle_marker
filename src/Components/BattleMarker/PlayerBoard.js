@@ -29,7 +29,7 @@ class PlayerBoard extends React.Component
                 <div className="player-board-body">
                     <div className="player-board-score">
                         <div className="player-board-score-trophy">
-                            <span>{this.state.player.score()}</span>
+                            <span className="player-board-score-points">{this.state.player.score()}</span>
                         </div>
                     </div>
                     <div className="player-board-missions">

@@ -37,6 +37,10 @@
 
 }
 
+.player-board-score-points {
+    text-shadow: 1px 6px 11px black;
+}
+
 .player-board-missions {
     width: 100%;
     height: 70%;
