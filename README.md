@@ -1,6 +1,6 @@
 # Warhammer 40k Scoreboard
 
-Tool to track the scores in a WH40K battle
+Tool to track the scores in a WH40K battle in React
 
 ## Run
 
