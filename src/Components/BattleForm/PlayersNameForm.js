@@ -13,11 +13,7 @@ class PlayersNameForm extends React.Component
     }
 
     handleChange = (event) => {
-        if (event.target.name === 'player1') {
-            this.setState({player1: event.target.value});
-        } else {
-            this.setState({player2: event.target.value});
-        }
+        this.setState({[event.target.name]: event.target.value})
     }
 
     submitForm = () => {

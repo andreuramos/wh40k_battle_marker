@@ -15,11 +15,7 @@ class MissionForm extends React.Component
     }
 
     handleChange = (e) => {
-        if (e.target.name === 'mission-name') {
-            this.setState({missionName: e.target.value});
-        } else {
-            this.setState({missionPoints: e.target.value})
-        }
+        this.setState({[e.target.name]: e.target.value});
     }
 
     submitForm = () => {
