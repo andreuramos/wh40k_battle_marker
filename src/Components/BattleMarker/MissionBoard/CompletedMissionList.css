@@ -1,7 +1,7 @@
 .mission-list {
     overflow-y: scroll;
     background-color: var(--background-color);
-    height: inherit;
+    height: 100%;
 }
 
 .completed-mission {
