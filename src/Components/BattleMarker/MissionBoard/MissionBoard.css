@@ -13,3 +13,10 @@
     padding: 1em;
     height: 80%;
 }
+
+@media (max-width: 480px) {
+    .mission-board-header {
+        margin: 0 auto;
+        position: relative;
+    }
+}

@@ -26,3 +26,12 @@
 .secondary-button:hover {
     background-color: var(--secondary-light-color);
 }
+
+@media (max-width: 480px) {
+    .secondary-button {
+        font-size: medium;
+        padding: .25em;
+        position: absolute;
+        margin: 1em 2em;
+    }
+}
