@@ -16,6 +16,27 @@
     background-color: black;
 }
 
+.round-counter {
+    padding: .5em;
+    background: black;
+    width: calc(100px - 1em);
+    z-index: 2;
+    left: -35px;
+    box-shadow: 0 0 1em rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.round-counter-title {
+    padding-top: .5em;
+    font-size: xx-small;
+    width: 100%
+}
+
+.round-counter-value {
+    font-size: 60px;
+    width: 100%;
+}
+
 @media (max-width: 480px) {
     .marker-board {
         flex-direction: column;
@@ -24,5 +45,16 @@
     .center-board {
         max-width: 100%;
         max-height: 30px;
+        display: inline-flex;
+    }
+
+    .round-counter {
+        height: 80px;
+        left: 0;
+        top: -35px;
+    }
+
+    .round-counter-title {
+        padding-top: 0;
     }
 }

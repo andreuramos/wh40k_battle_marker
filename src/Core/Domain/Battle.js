@@ -7,6 +7,8 @@ class Battle
     _isOver: boolean;
     _player1: Player;
     _player2: Player;
+    _activePlayer: number;
+    _round: number;
 
     constructor(player1, player2) {
         this._startedAt = new Date();
@@ -14,6 +16,8 @@ class Battle
         this._isOver = false;
         this._player1 = player1;
         this._player2 = player2;
+        this._activePlayer = 1;
+        this._round = 1;
     }
 
     startedAt(): Date
@@ -50,6 +54,26 @@ class Battle
     name(): String
     {
         return this._player1.name() + " vs " + this._player2.name();
+    }
+
+    activePlayer(): number
+    {
+        return this._activePlayer;
+    }
+
+    round(): number
+    {
+        return this._round;
+    }
+
+    nextTurn(): void
+    {
+        if (this._activePlayer === 1) {
+            this._activePlayer = 2;
+        } else {
+            this._round ++;
+            this._activePlayer = 1;
+        }
     }
 }
 

@@ -22,7 +22,7 @@ class PlayerBoard extends React.Component
 
     render() {
         return (
-            <div className="player-board">
+            <div className={this.props.ongoingTurn ? 'active-player-board' : 'player-board'}>
                 <div className="player-board-header">
                     <span>{this.state.player.name()}</span>
                 </div>
