@@ -20,6 +20,13 @@ class PlayerBoard extends React.Component
         })
     }
 
+    decreaseCommandPoints = () => {
+        console.log("decreasing CP");
+        const player = this.state.player;
+        player.substractCommandPoints(1);
+        this.setState({player: player});
+    }
+
     render() {
         return (
             <div className={this.props.ongoingTurn ? 'active-player-board' : 'player-board'}>
@@ -32,7 +39,7 @@ class PlayerBoard extends React.Component
                             <span className="player-board-points">{this.state.player.score()}</span>
                         </div>
                         <div className='player-board-command-points'>
-                            <span className="player-board-points">{this.state.player.commandPoints()}</span>
+                            <span className="player-board-points" onClick={this.decreaseCommandPoints}>{this.state.player.commandPoints()}</span>
                         </div>
                     </div>
                     <div className="player-board-missions">
