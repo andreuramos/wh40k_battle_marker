@@ -35,6 +35,7 @@ class PlayerBoard extends React.Component
                     <div className="player-board-missions">
                         <MissionBoard
                             player={this.state.player}
+                            round={this.props.round}
                             onAddMission={this.onMissionCompleted}
                         />
                     </div>

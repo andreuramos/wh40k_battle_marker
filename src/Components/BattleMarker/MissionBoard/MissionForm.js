@@ -22,7 +22,8 @@ class MissionForm extends React.Component
         if (this.props.onSubmit) {
             const mission = new CompletedMission(
                 this.state.missionName,
-                this.state.missionPoints
+                this.state.missionPoints,
+                this.props.round
             );
             this.props.onSubmit(mission);
         }

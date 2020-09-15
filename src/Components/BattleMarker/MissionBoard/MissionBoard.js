@@ -48,7 +48,10 @@ class MissionBoard extends React.Component
                 </div>
 
                 <Modal show={this.state.showMissionModal} title="Add a completed mission" onClose={this.closeMissionModal}>
-                    <MissionForm onSubmit={this.onMissionSubmit}/>
+                    <MissionForm
+                        onSubmit={this.onMissionSubmit}
+                        round={this.props.round}
+                    />
                 </Modal>
             </div>
         )

@@ -30,7 +30,11 @@ class BattleMarker extends Component
         return (
             <div className="battle-marker">
                 <div className="marker-board">
-                    <PlayerBoard player={this.state.battle.player1()} ongoingTurn={this.state.battle.activePlayer() === 1} />
+                    <PlayerBoard
+                        player={this.state.battle.player1()}
+                        ongoingTurn={this.state.battle.activePlayer() === 1}
+                        round={this.state.battle.round()}
+                    />
                     <div className="center-board">
                         <div className='round-counter'>
                             <div className='round-counter-title'>ROUND</div>
@@ -38,7 +42,11 @@ class BattleMarker extends Component
                         </div>
                         <Timer start={this.state.battle.startedAt()} />
                     </div>
-                    <PlayerBoard player={this.state.battle.player2()} ongoingTurn={this.state.battle.activePlayer() === 2} />
+                    <PlayerBoard
+                        player={this.state.battle.player2()}
+                        ongoingTurn={this.state.battle.activePlayer() === 2}
+                        round={this.state.battle.round()}
+                    />
                 </div>
                 <div className="marker-footer">
                     <Button
