@@ -70,9 +70,11 @@ class Battle
     {
         if (this._activePlayer === 1) {
             this._activePlayer = 2;
+            this.player2().addCommandPoints(1);
         } else {
             this._round ++;
             this._activePlayer = 1;
+            this.player1().addCommandPoints(1);
         }
     }
 }
