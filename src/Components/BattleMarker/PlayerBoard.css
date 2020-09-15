@@ -91,6 +91,7 @@
         width: 30%;
         height: 90%;
         display: block;
+        font-size: 80px;
     }
 
     .player-board-score-trophy {
