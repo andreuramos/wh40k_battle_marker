@@ -35,6 +35,7 @@
     width: 100%;
     height: calc(30% - .5em);
     font-size: 100px;
+    display: flex;
 }
 
 .player-board-score-trophy {
@@ -44,11 +45,22 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    width: 50%;
 
 }
 
-.player-board-score-points {
+.player-board-points {
     text-shadow: 1px 6px 11px black;
+}
+
+.player-board-command-points {
+    margin-top: .25em;
+    margin-bottom: .25em;
+    background-image: url("/commander-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 50%;
 }
 
 .player-board-missions {
@@ -72,6 +84,19 @@
     .player-board-score {
         width: 30%;
         height: 90%;
+        display: block;
+    }
+
+    .player-board-score-trophy {
+        width:100%;
+        height: 50%;
+        margin-left: .1em;
+    }
+
+    .player-board-command-points {
+        width:100%;
+        height: 50%;
+        margin-left: .1em;
     }
 
     .player-board-missions {
