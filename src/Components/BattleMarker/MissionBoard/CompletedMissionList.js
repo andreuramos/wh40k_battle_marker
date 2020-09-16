@@ -6,11 +6,12 @@ class CompletedMissionList extends React.Component
 {
     render() {
         return (
-            <div className="mission-list">
-                {this.props.missions.map((mission, i) => {
-                    return (<CompletedMission mission={mission} key={i} />)
-                })}
-            </div>
+                <div className="mission-list">
+                    {this.props.missions.map((mission, i) => {
+                        return (<CompletedMission mission={mission} key={i} rowId={i} />)
+                    })}
+                </div>
+
         )
     }
 }

@@ -1,0 +1,28 @@
+.completed-mission {
+    width: 100%;
+    display: table;
+}
+
+.pair-row {
+    background-color: var(--background-light-color);
+}
+
+.completed-mission-name {
+    width: 70%;
+    padding-left: 1em;
+    text-align: left;
+    display: table-cell;
+}
+
+.completed-mission-points {
+    width: 20%;
+    padding-right: 1em;
+    text-align: right;
+    display: table-cell;
+}
+
+.completed-mission-round{
+    width: 10%;
+    display: table-cell;
+}
+
