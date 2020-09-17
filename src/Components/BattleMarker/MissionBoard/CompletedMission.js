@@ -4,7 +4,6 @@ import "./CompletedMission.css";
 class CompletedMission extends React.Component
 {
     render() {
-        console.log("row: " + this.props.key);
         return (
             <div className={this.props.rowId % 2 ? "completed-mission pair-row" : "completed-mission"}>
                 <div className="completed-mission-round">{this.props.mission.round()}</div>
