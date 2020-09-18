@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Ataque Incisivo",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "surgical_attack"
+    ],
+    "battle_size": "Patrulla",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Escoltas",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "recognition"
+    ],
+    "battle_size": "Patrulla",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Rodear",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "surround"
+    ],
+    "battle_size": "Patrullla",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Divide y Conquista",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "demarcation_lines"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Fuego Cruzado",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "flank"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Terreno Central",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "central_terrain"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Seguir Adelante",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "keep_forward"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Saqueo",
+    "main_objective": "domination",
+    "secondary_objectives": [
+      "plunder"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  },
+  {
+    "name": "Frente en Movimiento",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "examinate_their_lines"
+    ],
+    "battle_size": "Incursion",
+    "family": "Guerra Eterna"
+  }
+]
