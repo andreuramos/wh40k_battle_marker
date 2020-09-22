@@ -6,7 +6,7 @@
       "surgical_attack"
     ],
     "battle_size": "Patrulla",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Escoltas",
@@ -15,7 +15,7 @@
       "recognition"
     ],
     "battle_size": "Patrulla",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Rodear",
@@ -24,7 +24,7 @@
       "surround"
     ],
     "battle_size": "Patrullla",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Divide y Conquista",
@@ -33,7 +33,7 @@
       "demarcation_lines"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Fuego Cruzado",
@@ -42,7 +42,7 @@
       "flank"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Terreno Central",
@@ -51,7 +51,7 @@
       "central_terrain"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Seguir Adelante",
@@ -60,7 +60,7 @@
       "keep_forward"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Saqueo",
@@ -69,7 +69,7 @@
       "plunder"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   },
   {
     "name": "Frente en Movimiento",
@@ -78,6 +78,6 @@
       "examinate_their_lines"
     ],
     "battle_size": "Incursion",
-    "family": "Guerra Eterna"
+    "pack": "Guerra Eterna"
   }
 ]
