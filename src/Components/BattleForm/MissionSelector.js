@@ -1,4 +1,5 @@
 import React from "react";
+import GetMainMissions from "../../Core/Application/GetMainMissions";
 
 class MissionSelector extends React.Component
 {
@@ -10,6 +11,11 @@ class MissionSelector extends React.Component
             missions: [],
             selectedMission: null
         }
+    }
+
+    async componentDidMount() {
+        const missions = await GetMainMissions.execute()
+        this.setState({missions: missions, loading: false});
     }
 
     render() {
