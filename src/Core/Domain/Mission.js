@@ -6,7 +6,7 @@ export default class Mission
     _main_objective: Objective;
     _suggested_secondary_objective: Objective;
     _pack: string;
-    _battle_size: string
+    _battle_size: string;
 
     constructor(name, main_objective, secondary_objective,pack,battle_size) {
         this._name = name;

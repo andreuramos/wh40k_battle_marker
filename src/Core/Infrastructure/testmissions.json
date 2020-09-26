@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ataque Incisivo",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "surgical_attack"
+    ],
+    "battle_size": "Patrulla",
+    "pack": "Guerra Eterna"
+  },
+  {
+    "name": "Escoltas",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "recognition"
+    ],
+    "battle_size": "Patrulla",
+    "pack": "Guerra Eterna"
+  }
+]
