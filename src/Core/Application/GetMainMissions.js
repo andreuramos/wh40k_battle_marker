@@ -2,7 +2,7 @@ import LocalFileMissionRepository from "../Infrastructure/LocalFileMissionReposi
 
 class GetMainMissions
 {
-    execute()
+    static async execute()
     {
         const repo = new LocalFileMissionRepository('./../Data/missions.json');
         return repo.getAllMissions();
