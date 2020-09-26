@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Ocupar y Mantener",
+    "key": "occupy_and_maintain",
+    "type": "main",
+    "descripción": "Al final de la fase de mando de cada jugador, según los marcadores que controla",
+    "trigger": "start_of_turn",
+    "skip_rounds": [1],
+    "max_score": 15,
+    "scoring": [
+      {
+        "description": "Controlar 1+ marcador",
+        "points": 5
+      },
+      {
+        "description": "Controlar 2+ marcadores",
+        "points": 5
+      },
+      {
+        "description": "Controlar más marcadores que el oponente",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "name": "Dominación",
+    "key": "domination",
+    "type": "secondary",
+    "descripción": "Al final de la fase de mando de cada jugador, según los marcadores que controla",
+    "trigger": "start_of_turn",
+    "skip_rounds": [1],
+    "max_score": 15,
+    "scoring": [
+      {
+        "description": "Controlar 2+ marcador",
+        "points": 5
+      },
+      {
+        "description": "Controlar 2+ marcadores",
+        "points": 5
+      },
+      {
+        "description": "Controlar más marcadores que el oponente",
+        "points": 5
+      }
+    ]
+  }
+]

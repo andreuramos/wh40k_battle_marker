@@ -7,4 +7,9 @@ export default class Objective
     _trigger: string;
     _max_score: integer;
     _scores: array;
+
+    constructor(name)
+    {
+        this._name = name;
+    }
 }
