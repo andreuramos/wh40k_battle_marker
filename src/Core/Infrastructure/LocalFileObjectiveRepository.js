@@ -16,7 +16,16 @@ class LocalFileObjectiveRepository
         return objectives;
     }
 
+    findByKey(key)
+    {
+        const data = require(this._data_file_path);
+        const objective = data.find( element => element['key'] === key);
 
+        if (objective) {
+            return ObjectiveBuilder.fromJson(objective);
+        }
+        throw new Error("Objective not found");
+    }
 }
 
 export default LocalFileObjectiveRepository;

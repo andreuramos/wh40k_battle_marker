@@ -25,7 +25,12 @@ describe("Local file objective repository", () => {
 
         expect(objective.constructor.name).toBe("Objective")
         expect(objective._name).toBe("Dominación")
+    })
 
+    it("throws exception when no objective is found by key", () => {
+        expect(() => {
+            repo.findByKey('something-that-does-not-exist')
+        }).toThrow("Objective not found");
     })
 
     it("filters by mission type", () => {
