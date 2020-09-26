@@ -33,10 +33,16 @@ describe("Local file objective repository", () => {
         }).toThrow("Objective not found");
     })
 
-    it("filters by mission type", () => {
-        const objective = repo.getByType('main');
+    it("returns null when no filter by type objective matches", () => {
+        const objectives = repo.getByType("exploratory")
 
-        expect(objective.constructor.name).toBe("Objective")
-        expect(objective._name).toBe("Ocupar y Mantener")
+        expect(objectives.length).toBe(0)
+    })
+
+    it("filters by mission type returns correct objective", () => {
+        const objectives = repo.getByType('main');
+
+        expect(objectives.constructor.name).toBe("Array")
+        expect(objectives[0]._name).toBe("Ocupar y Mantener")
     })
 })

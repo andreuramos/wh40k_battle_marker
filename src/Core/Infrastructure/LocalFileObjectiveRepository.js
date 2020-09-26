@@ -26,6 +26,19 @@ class LocalFileObjectiveRepository
         }
         throw new Error("Objective not found");
     }
+
+    getByType(type)
+    {
+        let objectives = []
+        const data = require(this._data_file_path)
+        data.forEach( el => {
+            if (el['type'] === type) {
+                objectives.push(ObjectiveBuilder.fromJson(el))
+            }
+        })
+
+        return objectives
+    }
 }
 
 export default LocalFileObjectiveRepository;
