@@ -14,7 +14,7 @@ class LocalFileMissionRepository
     async getAllMissions()
     {
         let missions = []
-        // const data = require('./../../Data/missions.json');
+
         let data;
         if (this.data_file_path) {
             data = require(this.data_file_path)
