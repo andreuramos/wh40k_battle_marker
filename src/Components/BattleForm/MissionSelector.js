@@ -14,11 +14,14 @@ class MissionSelector extends React.Component
     }
 
     async componentDidMount() {
-        const missions = await GetMainMissions.execute()
-        this.setState({missions: missions, loading: false});
+        this.setState({loading: true});
+        GetMainMissions.execute().then(missions => {
+            this.setState({missions: missions, loading: false});
+        })
     }
 
     render() {
+        console.log(this.state)
         if (this.state.loading) {
             return (
                 <div><i className='loading-icon'></i><span>Loading missions ...</span></div>
@@ -27,8 +30,8 @@ class MissionSelector extends React.Component
         return (
             <div>
                 <select type="select">
-                { this.state.missions.map(el => {
-                    return (<option value={el.key()}>{el.name()}</option>)
+                { this.state.missions.map((el, i) => {
+                    return (<option value={el.mainObjective()} key={i}>{el.name()}</option>)
                 })}
                 </select>
             </div>

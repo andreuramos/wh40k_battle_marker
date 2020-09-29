@@ -6,6 +6,7 @@ import Button from "./Components/Common/Button";
 import Modal from "./Components/Common/Modal";
 import PlayersNameForm from "./Components/BattleForm/PlayersNameForm";
 import Player from "./Core/Domain/Player";
+import BattleForm from "./Components/BattleForm/BattleForm";
 
 class App extends React.Component {
     constructor() {
@@ -60,7 +61,7 @@ class App extends React.Component {
                       show={this.state.buildingBattle}
                       onClose={this.cancelNewBattle}
                   ><div>
-                      <PlayersNameForm onSubmit={this.startBattle}/>
+                      <BattleForm onSubmit={this.startBattle}/>
                   </div>
                   </Modal>
               </div>

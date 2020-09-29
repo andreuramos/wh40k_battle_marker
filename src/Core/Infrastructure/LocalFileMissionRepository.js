@@ -11,10 +11,17 @@ class LocalFileMissionRepository
         this.cached_missions = [];
     }
 
-    getAllMissions()
+    async getAllMissions()
     {
         let missions = []
-        const data = require(this.data_file_path);
+        // const data = require('./../../Data/missions.json');
+        let data;
+        if (this.data_file_path) {
+            data = require(this.data_file_path)
+        } else {
+            data = require('./../../Data/missions.json')
+        }
+
         data.forEach(element => {
             const mission = new Mission(
                 element['name'],
@@ -25,7 +32,6 @@ class LocalFileMissionRepository
             );
             missions.push(mission);
         })
-
         return missions;
     }
 }

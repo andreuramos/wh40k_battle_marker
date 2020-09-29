@@ -5,17 +5,17 @@ describe("LocalFileMissionRepository", () => {
     it("returns an array of Missions", () => {
         const repo = new LocalFileMissionRepository('./testmissions.json')
 
-        const missions = repo.getAllMissions()
-
-        expect(Array.isArray(missions)).toBe(true)
-        expect(missions[0].constructor.name).toBe("Mission");
+        repo.getAllMissions().then( missions => {
+            expect(Array.isArray(missions)).toBe(true)
+            expect(missions[0].constructor.name).toBe("Mission");
+        })
     });
 
     it("gets all the missions", () => {
         const repo = new LocalFileMissionRepository('./testmissions.json')
 
-        const missions = repo.getAllMissions()
-
-        expect(missions.length).toBe(2)
+        repo.getAllMissions().then(missions => {
+            expect(missions.length).toBe(2)
+        })
     })
 });
