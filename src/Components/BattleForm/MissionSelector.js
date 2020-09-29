@@ -1,10 +1,10 @@
 import React from "react";
 import GetMainMissions from "../../Core/Application/GetMainMissions";
+import Select from "../Common/Select";
+import Button from "../Common/Button";
 
-class MissionSelector extends React.Component
-{
-    constructor()
-    {
+class MissionSelector extends React.Component {
+    constructor() {
         super();
         this.state = {
             loading: true,
@@ -20,20 +20,34 @@ class MissionSelector extends React.Component
         })
     }
 
+    selectMission = (mission) => {
+        console.log("mission")
+        console.log(mission)
+    }
+
     render() {
-        console.log(this.state)
+
         if (this.state.loading) {
             return (
                 <div><i className='loading-icon'></i><span>Loading missions ...</span></div>
             )
         }
+
+        let mission_options = this.state.missions.map(e => {
+            return {
+                value: e.name(),
+                text: e.name()
+            };
+        })
+        mission_options.unshift({
+            value: null,
+            text: "Select a mission"
+        })
+
         return (
             <div>
-                <select type="select">
-                { this.state.missions.map((el, i) => {
-                    return (<option value={el.mainObjective()} key={i}>{el.name()}</option>)
-                })}
-                </select>
+                <Select name="mission" onChange={this.selectMission} options={mission_options}></Select>
+                <Button text="Start Battle" onClick={this.submitForm}></Button>
             </div>
         )
     }
