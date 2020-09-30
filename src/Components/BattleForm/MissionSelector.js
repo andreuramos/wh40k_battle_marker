@@ -20,9 +20,9 @@ class MissionSelector extends React.Component {
         })
     }
 
-    selectMission = (mission) => {
-        console.log("mission")
-        console.log(mission)
+    selectMission = (selected_mission_name) => {
+        const selected_mission = this.state.missions.find(mission =>  mission.name() === selected_mission_name)
+        this.setState({selectedMission: selected_mission});
     }
 
     render() {
@@ -47,6 +47,9 @@ class MissionSelector extends React.Component {
         return (
             <div>
                 <Select name="mission" onChange={this.selectMission} options={mission_options}></Select>
+                {this.state.selectedMission ? <div className="mission-details">
+                    mission details
+                </div>:null}
                 <Button text="Start Battle" onClick={this.submitForm}></Button>
             </div>
         )
