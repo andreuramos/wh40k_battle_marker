@@ -24,7 +24,10 @@ class BattleForm extends React.Component
     }
 
     submitMissionForm = (data) => {
-
+        console.log(data)
+        this.setState({
+            mission: data.mission
+        })
     }
 
     render()
@@ -40,7 +43,7 @@ class BattleForm extends React.Component
         if (this.state.step === 'mission') {
             return (
                 <div>
-                    <MissionSelector/>
+                    <MissionSelector onSubmit={this.submitMissionForm}/>
                 </div>
             )
         }

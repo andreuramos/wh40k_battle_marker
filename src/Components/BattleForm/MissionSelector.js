@@ -9,7 +9,8 @@ class MissionSelector extends React.Component {
         this.state = {
             loading: true,
             missions: [],
-            selectedMission: null
+            selectedMission: null,
+            error: null
         }
     }
 
@@ -23,6 +24,19 @@ class MissionSelector extends React.Component {
     selectMission = (selected_mission_name) => {
         const selected_mission = this.state.missions.find(mission =>  mission.name() === selected_mission_name)
         this.setState({selectedMission: selected_mission});
+    }
+
+    submitForm = () => {
+        if (!this.state.selectedMission) {
+            this.setState({error: "Debes seleccionar una misión"})
+        }
+
+        if (this.props.onSubmit && this.state.error === null) {
+            const data = {
+                mission: this.state.selectedMission
+            };
+            this.props.onSubmit(data)
+        }
     }
 
     render() {
@@ -46,6 +60,8 @@ class MissionSelector extends React.Component {
 
         return (
             <div>
+
+                <span>Selecciona una misión</span>
                 <Select name="mission" onChange={this.selectMission} options={mission_options}></Select>
                 {this.state.selectedMission ? <div className="mission-details">
                     mission details
