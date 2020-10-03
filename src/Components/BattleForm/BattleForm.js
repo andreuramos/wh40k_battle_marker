@@ -1,6 +1,8 @@
 import React from "react";
 import PlayersNameForm from "./PlayersNameForm";
 import MissionSelector from "./MissionSelector";
+import SecondaryObjectivesForm from "./SecondaryObjectivesForm";
+import GetObjectiveByKey from "../../Core/Application/GetObjectiveByKey";
 
 class BattleForm extends React.Component
 {
@@ -11,7 +13,9 @@ class BattleForm extends React.Component
             step: 'player-names',
             mission: null,
             player1: null,
+            player1_objectives: null,
             player2: null,
+            player2_objectives: null
         }
     }
 
@@ -24,10 +28,29 @@ class BattleForm extends React.Component
     }
 
     submitMissionForm = (data) => {
-        console.log(data)
         this.setState({
-            mission: data.mission
+            mission: data.mission,
+            step: 'secondary-objectives-player1'
         })
+    }
+
+    submitObjectivesForm = (data) => {
+        const player = data.player;
+        if (player === this.state.player1) {
+            this.setState({
+                player1_objectives: data.objectives,
+                step: 'secondary-objectives-player2'
+            });
+        }
+        if (player === this.state.player2) {
+            this.setState({
+                player2_objectives: data.objectives
+            })
+            if (this.props.onSubmit) {
+                const data = this.state
+                this.props.onSubmit(data)
+            }
+        }
     }
 
     render()
@@ -45,6 +68,16 @@ class BattleForm extends React.Component
                 <div>
                     <MissionSelector onSubmit={this.submitMissionForm}/>
                 </div>
+            )
+        }
+
+        if (this.state.step === 'secondary-objectives-player1' || this.state.step === 'secondary-objectives-player2' ) {
+            return (
+                <SecondaryObjectivesForm
+                    player={this.state.step === 'secondary-objectives-player1' ? this.state.player1: this.state.player2 }
+                    suggestedObjective={this.state.mission.suggestedSecondaryObjective()}
+                    onSubmit={this.submitObjectivesForm}
+                />
             )
         }
     }
