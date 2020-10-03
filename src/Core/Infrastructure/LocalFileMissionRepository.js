@@ -26,7 +26,7 @@ class LocalFileMissionRepository
             const mission = new Mission(
                 element['name'],
                 element['main_objective'],
-                element['suggested_scondary_objective'],
+                element['secondary_objectives'][0],
                 element['pack'],
                 element['battle_size']
             );
