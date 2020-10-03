@@ -19,6 +19,8 @@ class SecondaryObjectivesForm extends React.Component
 
     componentDidMount() {
         this.loadObjective(this.props.suggestedObjective).then( objective => {
+            console.log("Loading suggested objective");
+            console.log(objective);
             let objectives = this.state.objectives;
             objectives[0] = objective
             this.setState({
@@ -29,7 +31,7 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     async loadObjective(key) {
-        await GetObjectiveByKey.execute(key).then(objective => {return objective});
+        return await GetObjectiveByKey.execute(key).then(objective => {return objective});
     }
 
     handleSubmit = (event) => {

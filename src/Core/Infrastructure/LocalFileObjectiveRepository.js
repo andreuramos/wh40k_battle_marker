@@ -18,9 +18,15 @@ class LocalFileObjectiveRepository
 
     findByKey(key)
     {
-        const data = require(this._data_file_path);
+        let data;
+        if (this._data_file_path) {
+            data = require(this._data_file_path);
+        } else {
+            data = require('./../../Data/objectives.json');
+        }
+        console.log(data);
         const objective = data.find( element => element['key'] === key);
-
+        console.log(objective);
         if (objective) {
             return ObjectiveBuilder.fromJson(objective);
         }

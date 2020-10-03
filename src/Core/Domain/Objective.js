@@ -12,4 +12,9 @@ export default class Objective
     {
         this._name = name;
     }
+
+    name(): string
+    {
+        return this._name
+    }
 }
