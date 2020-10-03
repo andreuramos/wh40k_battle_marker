@@ -64,9 +64,17 @@ class MissionSelector extends React.Component {
                 <span>Selecciona una misión</span>
                 <Select name="mission" onChange={this.selectMission} options={mission_options}></Select>
                 {this.state.selectedMission ? <div className="mission-details">
-                    mission details
+                    <div className='mission-details-row'>
+                        <span className='mission-details-title'>Battle Size</span>
+                        <span className='mission-details-data'>{this.state.selectedMission.battleSize()}</span>
+                    </div>
+                    <div className='mission-details-row'>
+                        <span className='mission-details-data'>
+                            {this.state.selectedMission.description()}
+                        </span>
+                    </div>
                 </div>:null}
-                <Button text="Start Battle" onClick={this.submitForm}></Button>
+                <Button text="Next" onClick={this.submitForm}></Button>
             </div>
         )
     }

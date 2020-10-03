@@ -24,13 +24,12 @@ class LocalFileObjectiveRepository
         } else {
             data = require('./../../Data/objectives.json');
         }
-        console.log(data);
         const objective = data.find( element => element['key'] === key);
-        console.log(objective);
         if (objective) {
+            console.log(objective)
             return ObjectiveBuilder.fromJson(objective);
         }
-        throw new Error("Objective not found");
+        throw new Error("Objective not found: "+ key);
     }
 
     getByType(type)

@@ -10,28 +10,11 @@ class SecondaryObjectivesForm extends React.Component
             player: props.player,
             loading: true,
             objectives: [
-                null,
+                this.props.suggestedObjective,
                 null,
                 null
             ]
         }
-    }
-
-    componentDidMount() {
-        this.loadObjective(this.props.suggestedObjective).then( objective => {
-            console.log("Loading suggested objective");
-            console.log(objective);
-            let objectives = this.state.objectives;
-            objectives[0] = objective
-            this.setState({
-                objectives: objectives,
-                loading: false
-            });
-        })
-    }
-
-    async loadObjective(key) {
-        return await GetObjectiveByKey.execute(key).then(objective => {return objective});
     }
 
     handleSubmit = (event) => {

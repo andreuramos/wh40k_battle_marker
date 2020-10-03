@@ -1,4 +1,4 @@
-import Mission from "../Domain/Mission";
+import MissionBuilder from "../Domain/MissionBuilder";
 
 class LocalFileMissionRepository
 {
@@ -23,13 +23,7 @@ class LocalFileMissionRepository
         }
 
         data.forEach(element => {
-            const mission = new Mission(
-                element['name'],
-                element['main_objective'],
-                element['secondary_objectives'][0],
-                element['pack'],
-                element['battle_size']
-            );
+            const mission = MissionBuilder.fromJson(element)
             missions.push(mission);
         })
         return missions;

@@ -3,13 +3,15 @@ import Objective from "./Objective";
 export default class Mission
 {
     _name: string;
+    _description: string;
     _main_objective: Objective;
     _suggested_secondary_objective: Objective;
     _pack: string;
     _battle_size: string;
 
-    constructor(name, main_objective, secondary_objective,pack,battle_size) {
+    constructor(name, description, main_objective, secondary_objective,pack,battle_size) {
         this._name = name;
+        this._description = description;
         this._main_objective = main_objective;
         this._suggested_secondary_objective = secondary_objective;
         this._pack = pack;
@@ -19,6 +21,11 @@ export default class Mission
     name(): string
     {
         return this._name;
+    }
+
+    description(): string
+    {
+        return this._description + this._main_objective.description();
     }
 
     mainObjective(): Objective

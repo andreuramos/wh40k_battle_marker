@@ -6,7 +6,8 @@
       "surgical_attack"
     ],
     "battle_size": "Patrulla",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "<p><b>Barrido y Limpieza</b> En esta misión, si controlas un marcador objectivo al final de tu fase de mando se considera que está bajo tu control, incluso si no dispones de miniaturas que lo tengan a su alcance, a menos que tu oponente lo controle al final de cualquier fase posterior.</p>"
   },
   {
     "name": "Escoltas",
@@ -23,7 +24,7 @@
     "secondary_objectives": [
       "surround"
     ],
-    "battle_size": "Patrullla",
+    "battle_size": "Patrulla",
     "pack": "Guerra Eterna"
   },
   {
