@@ -1,0 +1,14 @@
+.mission-details {
+    margin-top: 1em;
+}
+
+.mission-details-row {
+    font-size: medium;
+}
+
+.mission-details-data {
+    font-size:medium;
+    background: black;
+    text-align: justify;
+    margin: 1em;
+}

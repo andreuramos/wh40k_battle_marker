@@ -2,6 +2,7 @@ import React from "react";
 import GetMainMissions from "../../Core/Application/GetMainMissions";
 import Select from "../Common/Select";
 import Button from "../Common/Button";
+import './MissionSelector.css';
 
 class MissionSelector extends React.Component {
     constructor() {
@@ -69,9 +70,9 @@ class MissionSelector extends React.Component {
                         <span className='mission-details-data'>{this.state.selectedMission.battleSize()}</span>
                     </div>
                     <div className='mission-details-row'>
-                        <span className='mission-details-data'>
-                            {this.state.selectedMission.description()}
-                        </span>
+                        <div className='mission-details-data'
+                            dangerouslySetInnerHTML={{__html: this.state.selectedMission.description()}}
+                        />
                     </div>
                 </div>:null}
                 <Button text="Next" onClick={this.submitForm}></Button>
