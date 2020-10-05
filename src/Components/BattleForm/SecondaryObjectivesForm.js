@@ -1,6 +1,9 @@
 import React from "react";
 import GetObjectiveByKey from "../../Core/Application/GetObjectiveByKey";
 import Button from "../Common/Button";
+import "./SecondaryObjectivesForm.css";
+import Modal from "../Common/Modal";
+import Select from "../Common/Select";
 
 class SecondaryObjectivesForm extends React.Component
 {
@@ -8,8 +11,9 @@ class SecondaryObjectivesForm extends React.Component
         super(props);
         this.state = {
             player: props.player,
-            loading: true,
-            objectives: [
+            selectorOpened: false,
+            selectingSlot: null,
+            selectedObjectives: [
                 this.props.suggestedObjective,
                 null,
                 null
@@ -17,10 +21,19 @@ class SecondaryObjectivesForm extends React.Component
         }
     }
 
+    openSelector = (slot) => {
+        console.log("Selecting slot "+ slot);
+        this.setState({selectorOpened: true, selectingSlot: slot});
+    }
+
+    exitSelector = () => {
+        this.setState({selectorOpened: false, selectingSlot: null});
+    }
+
     handleSubmit = (event) => {
         const data = {
             player: this.state.player,
-            objectives: this.state.objectives
+            objectives: this.state.selectedObjectives
         }
 
         if (this.props.onSubmit) {
@@ -29,22 +42,32 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     render() {
-        if (this.state.loading) {
-            return <div><span>Loading ...</span></div>
-        }
         return (
             <div>
                 <span>Secondary Objectives for {this.props.player}</span>
                 <div className='objectives-block'>
-                { this.state.objectives.map( (objective, i) => {
+                { this.state.selectedObjectives.map( (objective, i) => {
                     return (
-                        <div className={ objective ? 'objective selected-objective' : 'objective'} key={i}>
+                        <div
+                            className={ objective ? 'objective selected-objective' : 'objective'}
+                            key={i}
+                            onClick={() => {this.openSelector(i)}}
+                        >
                             { objective ? objective.name() : 'Select an objective' }
                         </div>
                     )
                 })}
                 </div>
                 <Button text='Next' onClick={this.handleSubmit} />
+                <Modal
+                    title="Select Secondary Objective"
+                    show={this.state.selectorOpened}
+                    onClose={this.exitSelector}
+                    >
+                    <div>
+                        Select objective
+                    </div>
+                </Modal>
             </div>
         )
     }
