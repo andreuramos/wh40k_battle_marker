@@ -22,7 +22,6 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     openSelector = (slot) => {
-        console.log("Selecting slot "+ slot);
         this.setState({selectorOpened: true, selectingSlot: slot});
     }
 

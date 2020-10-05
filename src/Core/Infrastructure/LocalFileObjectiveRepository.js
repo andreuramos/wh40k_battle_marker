@@ -26,7 +26,6 @@ class LocalFileObjectiveRepository
         }
         const objective = data.find( element => element['key'] === key);
         if (objective) {
-            console.log(objective)
             return ObjectiveBuilder.fromJson(objective);
         }
         throw new Error("Objective not found: "+ key);
