@@ -32,7 +32,11 @@ class MissionSelector extends React.Component {
             this.setState({error: "Debes seleccionar una misión"})
         }
 
-        if (this.props.onSubmit && this.state.error === null) {
+        if (
+            this.props.onSubmit &&
+            this.state.error === null &&
+            this.state.selectedMission !== null
+        ) {
             const data = {
                 mission: this.state.selectedMission
             };
