@@ -6,7 +6,10 @@ class ObjectiveBuilder
     {
         return new Objective(
             data['name'],
-            data['description']
+            data['key'],
+            data['description'],
+            data['type'],
+            data['category']
         );
     }
 }
