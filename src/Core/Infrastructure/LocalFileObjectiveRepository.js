@@ -9,7 +9,13 @@ class LocalFileObjectiveRepository
 
     getAll() {
         let objectives = [];
-        const data = require(this._data_file_path);
+        let data;
+        if (this._data_file_path) {
+            data = require(this._data_file_path);
+        } else {
+            data = require('./../../Data/objectives.json');
+        }
+
         data.forEach( el => {
             objectives.push(ObjectiveBuilder.fromJson(el));
         });
@@ -34,7 +40,13 @@ class LocalFileObjectiveRepository
     getByType(type)
     {
         let objectives = []
-        const data = require(this._data_file_path)
+        let data;
+        if (this._data_file_path) {
+            data = require(this._data_file_path);
+        } else {
+            data = require('./../../Data/objectives.json');
+        }
+
         data.forEach( el => {
             if (el['type'] === type) {
                 objectives.push(ObjectiveBuilder.fromJson(el))
