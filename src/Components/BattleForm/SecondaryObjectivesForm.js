@@ -26,7 +26,9 @@ class SecondaryObjectivesForm extends React.Component
 
     componentDidMount() {
         GetSecondaryObjectives.execute().then((objectives) => {
-            this.setState({allObjectives: objectives})
+            let all_objectives = objectives
+            all_objectives.push(this.props.suggestedObjective)
+            this.setState({allObjectives: all_objectives})
             this.updateSelectableObjectives()
         })
     }
@@ -47,6 +49,8 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     openSelector = (slot) => {
+        // TODO if slot has already an objective, this category should be selctable
+
         this.setState({selectorOpened: true, selectingSlot: slot});
     }
 
@@ -64,6 +68,7 @@ class SecondaryObjectivesForm extends React.Component
                 selectingSlot: null,
                 selectorOpened: false
             });
+            this.updateSelectableObjectives()
         });
     }
 
@@ -72,7 +77,13 @@ class SecondaryObjectivesForm extends React.Component
             player: this.state.player,
             objectives: this.state.selectedObjectives
         }
-
+        this.setState({
+            objectives: [
+                this.props.suggestedObjective,
+                null,
+                null
+            ]
+        })
         if (this.props.onSubmit) {
             this.props.onSubmit(data)
         }
