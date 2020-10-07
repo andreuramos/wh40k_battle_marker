@@ -241,8 +241,144 @@
     "max_score": null,
     "scoring": [
       {
-        "description": "PERSONAJEs enemigos eliminados",
-        "points": "open"
+        "description": "PERSONAJE enemigos eliminados",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Abatir Blanco Grande",
+    "key": "beat_big_target",
+    "type": "secondary",
+    "category": "purgue_the_enemy",
+    "description": "Al final de la partida obtienes 2 puntos de victoria por cada criatura MONSTRUO o VEHICULO enemiga con 10 o menos heridas que sea eliminada y 3 por cada criatura MONSTRUO o VEHICULO con 11 o más heridas",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "MONSTRUOS o VEHICULOSs enemigos hasta 10 heridas eliminados",
+        "points": "2"
+      },
+      {
+        "description": "MONSTRUOS o VEHÍCULOS enemigos 11+ heridas eliminados",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Matatitanes",
+    "key": "titan_slayer",
+    "type": "secondary",
+    "category": "purgue_the_enemy",
+    "description": "Obtienes 10 puntos por eliminar a una unidad TITAN enemiga. 15 por eliminar a dos o más",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "1 TITAN enemigo eliminado",
+        "points": "10"
+      },
+      {
+        "description": "2+ TITANes enemigos eliminados",
+        "points": "15"
+      }
+    ]
+  },
+  {
+    "name": "Eliminar al señor de la guerra",
+    "key": "slay_the_warlord",
+    "type": "secondary",
+    "category": "purgue_the_enemy",
+    "description": "Al final de la partida obtienes 6 puntos de victoria si el SEÑOR DE LA GUERRA enemigo es eliminado",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "SEÑOR DE LA GUERRA enemigo eliminado",
+        "points": "6"
+      }
+    ]
+  },
+  {
+    "name": "Diezmar sus filas",
+    "key": "thin_their_ranks",
+    "type": "secondary",
+    "category": "no_mercy_no_respite",
+    "description": "Al final de la partida obtienes 1/10 puntos de victoria por cada miniatura enemiga eliminada o 1 punto si ésta tiene 10+ heridas",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "miniatura enemiga eliminada",
+        "points": "1/10"
+      },
+      {
+        "descripción": "miniatura enemiga con 10+ heridas eliminada",
+        "points": 1
+      }
+    ]
+  },
+  {
+    "name": "Desgaste",
+    "key": "attrition",
+    "type": "secondary",
+    "category": "no_mercy_no_respite",
+    "description": "Al final de la ronda obtienes 4 puntos si han sido eliminadas más unidades enemigas que amigas",
+    "trigger": "end_of_round",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Más unidades enemigas eliminadas que amigas",
+        "points": "4"
+      }
+    ]
+  },
+  {
+    "name": "Mientras resistamos, pelearemos",
+    "key": "while_we_stand_we_fight",
+    "type": "secondary",
+    "category": "no_mercy_no_respite",
+    "description": "Las 3 miniaturas con más puntos (incluyendo armas) sobreviven al final de la batalla",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Una miniatura ha sobrevivido",
+        "points": "4"
+      },
+      {
+        "description": "Dos miniaturas han sobrevivido",
+        "points": "4"
+      },
+      {
+        "description": "Tres miniaturas han sobrevivido",
+        "points": "4"
+      }
+    ]
+  },
+  {
+    "name": "Golpear Primero",
+    "key": "first_strike",
+    "type": "secondary",
+    "category": "no_mercy_no_respite",
+    "description": "5 puntos por eliminar una unidad enemiga en la primera ronda. 3 adicionales si en la primera ronda se han elminado más unidades enemigas que amigas",
+    "trigger": "end_of_round",
+    "skip_rounds": [2,3,4,5],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Unidad enemiga eliminada",
+        "points": "5"
+      },
+      {
+        "description": "Más unidades enemigas que amigas eliminadas",
+        "points": "3"
       }
     ]
   }
