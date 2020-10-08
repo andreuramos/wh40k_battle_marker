@@ -6,10 +6,8 @@ class SecondaryObjectivesSelector extends Component
 {
     constructor(props) {
         super(props);
-        let objectiveOptions = this.props.options
-        objectiveOptions.unshift({text:'Select objective', value:null})
         this.state = {
-            objectiveOptions: objectiveOptions,
+            objectiveOptions: this.props.options,
             selectedObjective: null
         };
     }
@@ -34,6 +32,7 @@ class SecondaryObjectivesSelector extends Component
                     options={this.state.objectiveOptions}
                     name='select-objective'
                     onChange={this.selectObjective}
+                    defaultText="Select an Objective"
                 />
                 <Button text='Select' onClick={this.submitForm} />
             </div>

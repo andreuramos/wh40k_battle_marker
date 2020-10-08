@@ -12,6 +12,7 @@ class Select extends React.Component
     render() {
         return (
             <select className="form-select" name={this.props.name} onChange={this.handleChange}>
+                { this.props.defaultText ? <option value="">{ this.props.defaultText }</option> : '' }
                 {this.props.options.map((el, i) => {
                     return (<option value={el.value} key={i}>{el.text}</option>)
                 })}
