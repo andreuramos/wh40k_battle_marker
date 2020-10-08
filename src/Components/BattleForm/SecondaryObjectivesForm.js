@@ -78,7 +78,7 @@ class SecondaryObjectivesForm extends React.Component
             objectives: this.state.selectedObjectives
         }
         this.setState({
-            objectives: [
+            selectedObjectives: [
                 this.props.suggestedObjective,
                 null,
                 null
