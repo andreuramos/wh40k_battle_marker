@@ -4,7 +4,12 @@ class GetSecondaryObjectives
 {
     static async execute() {
         const repo = new LocalFileObjectiveRepository()
-        return repo.getByType('secondary');
+        return repo.getByType('secondary').filter((item) => {
+            if (item.category() !== "main") {
+                return true;
+            }
+            return false;
+        });
     }
 }
 
