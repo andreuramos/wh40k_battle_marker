@@ -48,9 +48,16 @@ class SecondaryObjectivesForm extends React.Component
         this.setState({objectiveOptions: selectableObjectives})
     }
 
+    unselectObjective = (slot) => {
+        let selectedObjectives = this.state.selectedObjectives
+        selectedObjectives[this.state.selectingSlot] = null;
+        this.setState({
+            selectedObjectives: selectedObjectives
+        });
+    }
+
     openSelector = (slot) => {
         // TODO if slot has already an objective, this category should be selctable
-
         this.setState({selectorOpened: true, selectingSlot: slot});
     }
 
@@ -60,13 +67,11 @@ class SecondaryObjectivesForm extends React.Component
 
     selectObjective = (data) => {
         if (!data.selectedObjective) {
-            let selectedObjectives = this.state.selectedObjectives
-            selectedObjectives[this.state.selectingSlot] = null;
+            this.unselectObjective(this.state.selectingSlot)
             this.setState({
-                selectedObjectives: selectedObjectives,
                 selectingSlot: null,
                 selectorOpened: false
-            });
+            })
             return
         }
 
