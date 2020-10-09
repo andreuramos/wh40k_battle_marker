@@ -80,7 +80,7 @@ class SecondaryObjectivesForm extends React.Component
             let selected_objectives = this.state.selectedObjectives;
             selected_objectives[current_selecting_slot] = objective;
             this.setState({
-                selected_objectives: selected_objectives,
+                selectedObjectives: selected_objectives,
                 selectingSlot: null,
                 selectorOpened: false
             });
