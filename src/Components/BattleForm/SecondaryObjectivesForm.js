@@ -59,6 +59,17 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     selectObjective = (data) => {
+        if (!data.selectedObjective) {
+            let selectedObjectives = this.state.selectedObjectives
+            selectedObjectives[this.state.selectingSlot] = null;
+            this.setState({
+                selectedObjectives: selectedObjectives,
+                selectingSlot: null,
+                selectorOpened: false
+            });
+            return
+        }
+
         GetObjectiveByKey.execute(data.selectedObjective).then((objective) => {
             const current_selecting_slot = this.state.selectingSlot;
             let selected_objectives = this.state.selectedObjectives;
