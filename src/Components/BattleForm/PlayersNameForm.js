@@ -54,7 +54,7 @@ class PlayersNameForm extends React.Component
                         />
                     </div>
                 </form>
-                <Button id="submit-player-form" text="Start Battle" onClick={this.submitForm} />
+                <Button id="submit-player-form" text="Next" onClick={this.submitForm} />
             </div>
         )
     }
