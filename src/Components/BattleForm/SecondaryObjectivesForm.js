@@ -11,7 +11,7 @@ class SecondaryObjectivesForm extends React.Component
     constructor(props) {
         super(props);
         this.state = {
-            player: props.player,
+            player: this.props.player,
             selectorOpened: false,
             selectingSlot: null,
             selectedObjectives: [
@@ -91,7 +91,7 @@ class SecondaryObjectivesForm extends React.Component
 
     handleSubmit = (event) => {
         const data = {
-            player: this.state.player,
+            player: this.props.player,
             objectives: this.state.selectedObjectives
         }
         this.setState({

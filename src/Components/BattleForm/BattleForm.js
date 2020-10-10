@@ -2,7 +2,7 @@ import React from "react";
 import PlayersNameForm from "./PlayersNameForm";
 import MissionSelector from "./MissionSelector";
 import SecondaryObjectivesForm from "./SecondaryObjectivesForm";
-import GetObjectiveByKey from "../../Core/Application/GetObjectiveByKey";
+import StartingPlayerForm from "./StartingPlayerForm";
 
 class BattleForm extends React.Component
 {
@@ -15,7 +15,8 @@ class BattleForm extends React.Component
             player1: null,
             player1_objectives: null,
             player2: null,
-            player2_objectives: null
+            player2_objectives: null,
+            starting_player: null
         }
     }
 
@@ -36,6 +37,7 @@ class BattleForm extends React.Component
 
     submitObjectivesForm = (data) => {
         const player = data.player;
+        console.log("submitting objectives for player", player)
         if (player === this.state.player1) {
             this.setState({
                 player1_objectives: data.objectives,
@@ -43,13 +45,20 @@ class BattleForm extends React.Component
             });
         }
         if (player === this.state.player2) {
+            console.log("which is player 2")
             this.setState({
-                player2_objectives: data.objectives
+                player2_objectives: data.objectives,
+                step: 'starting-player'
             })
-            if (this.props.onSubmit) {
-                const data = this.state
-                this.props.onSubmit(data)
-            }
+        }
+    }
+
+    submitStartingPlayerForm = (data) => {
+        const startingPlayer = data.startingPlayer
+        this.setState({starting_player: startingPlayer})
+
+        if (this.props.onSubmit) {
+            this.props.onSubmit(this.state)
         }
     }
 
@@ -71,12 +80,32 @@ class BattleForm extends React.Component
             )
         }
 
-        if (this.state.step === 'secondary-objectives-player1' || this.state.step === 'secondary-objectives-player2' ) {
+        if (this.state.step === 'secondary-objectives-player1') {
             return (
                 <SecondaryObjectivesForm
-                    player={this.state.step === 'secondary-objectives-player1' ? this.state.player1: this.state.player2 }
-                    suggestedObjective={this.state.mission.suggestedSecondaryObjective()}
-                    onSubmit={this.submitObjectivesForm}
+                    player={ this.state.player1 }
+                    suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
+                    onSubmit={ this.submitObjectivesForm }
+                />
+            )
+        }
+
+        if (this.state.step === 'secondary-objectives-player2') {
+            return (
+                <SecondaryObjectivesForm
+                    player={ this.state.player2 }
+                    suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
+                    onSubmit={ this.submitObjectivesForm }
+                />
+            )
+        }
+
+        if (this.state.step === 'starting-player') {
+            return (
+                <StartingPlayerForm
+                    player1={this.state.player1}
+                    player2={this.state.player2}
+                    onSubmit={this.submitStartingPlayerForm}
                 />
             )
         }
