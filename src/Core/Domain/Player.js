@@ -4,6 +4,7 @@ class Player
     _score: Number;
     _completedMissions: Array
     _commandPoints: Number;
+    _objectives: Array
 
     constructor(name)
     {
@@ -11,6 +12,7 @@ class Player
         this._score = 0;
         this._completedMissions = [];
         this._commandPoints = 0;
+        this._objectives = []
     }
 
     name(): String
@@ -54,6 +56,16 @@ class Player
         if (this._commandPoints - points >= 0) {
             this._commandPoints -= points;
         }
+    }
+
+    addObjective(objective): void
+    {
+        this._objectives.push(objective)
+    }
+
+    objectives(): Array
+    {
+        return this._objectives
     }
 }
 
