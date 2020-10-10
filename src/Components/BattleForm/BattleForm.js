@@ -37,7 +37,6 @@ class BattleForm extends React.Component
 
     submitObjectivesForm = (data) => {
         const player = data.player;
-        console.log("submitting objectives for player", player)
         if (player === this.state.player1) {
             this.setState({
                 player1_objectives: data.objectives,
@@ -45,7 +44,6 @@ class BattleForm extends React.Component
             });
         }
         if (player === this.state.player2) {
-            console.log("which is player 2")
             this.setState({
                 player2_objectives: data.objectives,
                 step: 'starting-player'
