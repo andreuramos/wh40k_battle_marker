@@ -28,7 +28,7 @@ describe("RadioButton", () => {
         const callback = jest.fn()
         const radio = shallow(<RadioButton name="input_name" value={1} onClick={callback}/>)
 
-        radio.find('input').simulate('click')
+        radio.find('input').simulate('change')
 
         expect(callback.mock.calls.length).toBe(1)
     })
@@ -36,28 +36,28 @@ describe("RadioButton", () => {
     it("renders unselected by default", () => {
         const radio = shallow(<RadioButton name="input_name" value={1}/>)
 
-        expect(radio.state('selected')).toBe(false)
+        expect(radio.state('checked')).toBe(false)
     })
 
     it("gets selected when clicked", () => {
         const radio = shallow(<RadioButton name="input_name" value={1}/>)
 
-        radio.find('input').simulate('click')
+        radio.find('input').simulate('change')
 
-        expect(radio.state('selected')).toBe(true)
+        expect(radio.state('checked')).toBe(true)
     })
 
     it('renders as selected when selected prop is set to true', () => {
-        const radio = shallow(<RadioButton name="input_name" value={1} selected={true}/>)
+        const radio = shallow(<RadioButton name="input_name" value={1} checked={true}/>)
 
-        expect(radio.state('selected')).toBe(true)
+        expect(radio.state('checked')).toBe(true)
     })
 
     it("does not execute callback when clicked and was already selected", () => {
         const callback = jest.fn()
-        const radio = shallow(<RadioButton name="input_name" value={1} onClick={callback} selected={true}/>)
+        const radio = shallow(<RadioButton name="input_name" value={1} onClick={callback} checked={true}/>)
 
-        radio.find('input').simulate('click')
+        radio.find('input').simulate('change')
 
         expect(callback.mock.calls.length).toBe(0)
     })
