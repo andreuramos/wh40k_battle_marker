@@ -4,9 +4,9 @@ import BattleMarker from "./Components/BattleMarker/BattleMarker";
 import Battle from "./Core/Domain/Battle";
 import Button from "./Components/Common/Button";
 import Modal from "./Components/Common/Modal";
-import PlayersNameForm from "./Components/BattleForm/PlayersNameForm";
 import Player from "./Core/Domain/Player";
 import BattleForm from "./Components/BattleForm/BattleForm";
+import BattleBuilder from "./Core/Domain/BattleBuilder";
 
 class App extends React.Component {
     constructor() {
@@ -18,10 +18,9 @@ class App extends React.Component {
     }
 
     startBattle = (formData) => {
-        const player1 = new Player(formData.player1);
-        const player2 = new Player(formData.player2);
+        const battle = BattleBuilder.fromForm(formData)
         this.setState({
-            ongoingBattle: new Battle(player1, player2),
+            ongoingBattle: battle,
             buildingBattle: false
         });
     }
