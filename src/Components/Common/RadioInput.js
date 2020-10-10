@@ -21,7 +21,7 @@ export default class RadioInput extends React.Component
         return (
             <div>
                 { this.props.children.map((el, i) => {
-                    const checked = el.props.value === this.props.default;
+                    const checked = el.props.value === this.state.value;
                     return React.cloneElement(el, {
                         name: this.props.name,
                         key: i,
