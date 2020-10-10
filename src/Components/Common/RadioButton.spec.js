@@ -36,21 +36,13 @@ describe("RadioButton", () => {
     it("renders unselected by default", () => {
         const radio = shallow(<RadioButton name="input_name" value={1}/>)
 
-        expect(radio.state('checked')).toBe(false)
-    })
-
-    it("gets selected when clicked", () => {
-        const radio = shallow(<RadioButton name="input_name" value={1}/>)
-
-        radio.find('input').simulate('change')
-
-        expect(radio.state('checked')).toBe(true)
+        expect(radio.props().checked).toBe(undefined)
     })
 
     it('renders as selected when selected prop is set to true', () => {
         const radio = shallow(<RadioButton name="input_name" value={1} checked={true}/>)
 
-        expect(radio.state('checked')).toBe(true)
+        expect(radio.find('input').props().checked).toBe(true)
     })
 
     it("does not execute callback when clicked and was already selected", () => {

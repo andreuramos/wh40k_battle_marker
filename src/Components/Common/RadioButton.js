@@ -2,19 +2,8 @@ import React from "react";
 
 export default class RadioButton extends React.Component
 {
-    constructor(props) {
-        super(props);
-        this.state = {
-            checked: this.props.checked ? true : false
-        }
-    }
-
-    handleClick = () => {
-        if (this.state.checked) {
-            return
-        }
-
-        this.setState({checked: true})
+    handleChange = (e) => {
+        if (this.props.checked) return
 
         if (this.props.onClick) {
             this.props.onClick(this.props.value)
@@ -31,8 +20,8 @@ export default class RadioButton extends React.Component
                     id={input_id}
                     name={this.props.name}
                     value={this.props.value}
-                    onChange={this.handleClick}
-                    checked={this.state.checked}
+                    onChange={this.handleChange}
+                    checked={this.props.checked}
                 />
             </div>
         )
