@@ -7,15 +7,14 @@ describe('BattleBuilder', () => {
     const objective = new Objective("TestMain","test-main", "desc", "main", "main")
     const secondary = new Objective("TestSecondary", "test-sec", "desc", "secondary", "main")
     const mission = new Mission("Test", "test test", objective, secondary, "test", "any")
+    let form_data = {
+        player1: "Andreu",
+        player2: "Pedro",
+        startingPlayer: "Andreu",
+        mission: mission
+    }
 
     it('creates the battle with the player\'s names', () => {
-        const form_data = {
-            player1: "Andreu",
-            player2: "Pedro",
-            startingPlayer: "Andreu",
-            mission: mission
-        }
-
         const battle = BattleBuilder.fromForm(form_data)
 
         expect(battle.player1().name()).toBe("Andreu")
@@ -23,12 +22,7 @@ describe('BattleBuilder', () => {
     })
 
     it('sets starting player as player 1', () => {
-        const form_data = {
-            player1: "Andreu",
-            player2: "Pedro",
-            startingPlayer: "Pedro",
-            mission: mission
-        }
+        form_data.startingPlayer = "Pedro"
 
         const battle = BattleBuilder.fromForm(form_data)
 
@@ -37,12 +31,6 @@ describe('BattleBuilder', () => {
     })
 
     it('attaches main mission to players', () => {
-        const form_data = {
-            player1: "Andreu",
-            player2: "Pedro",
-            mission: mission
-        }
-
         const battle = BattleBuilder.fromForm(form_data)
 
         expect(battle.player1().objectives()[0]).toBe(objective)
