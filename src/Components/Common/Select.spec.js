@@ -13,6 +13,7 @@ describe('Select', () => {
         }
 
         const select = shallow(<Select options={options} />)
+
         expect(select.find('option').length).toBe(10)
     })
 
@@ -27,9 +28,10 @@ describe('Select', () => {
     it('executes callback onchange', () => {
         const callback = jest.fn();
         const options = [{value:1, text: 1},{value:2, text:2}]
-        const select = shallow((<Select onChange={callback} options={options}/> ))
-        select.find('.form-select').simulate('change', {target: {value: options[1].value}});
 
+        const select = shallow((<Select onChange={callback} options={options}/> ))
+
+        select.find('.form-select').simulate('change', {target: {value: options[1].value}});
         expect(callback.mock.calls.length).toEqual(1)
     })
 })
