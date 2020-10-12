@@ -24,7 +24,7 @@ class Select extends React.Component
             })
     }
 
-    optiongroup = (label, options) => {
+    renderOptionGroup = (label, options) => {
         return (
             <optgroup label={label} key={label}>
                 {options.map( (element,i) => {
@@ -40,7 +40,7 @@ class Select extends React.Component
             <select className="form-select" name={this.props.name} onChange={this.handleChange}>
                 { this.props.defaultText ? <option value="">{ this.props.defaultText }</option> : '' }
                 { this.props.group ?
-                    this.getOptionGroups().map( (group) => {return this.optiongroup(group.label, group.options)})
+                    this.getOptionGroups().map( (group) => {return this.renderOptionGroup(group.label, group.options)})
                 :
                     this.props.options.map((el, i) => {
                         return (<option value={el.value} key={i}>{el.text}</option>)
