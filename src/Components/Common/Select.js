@@ -10,22 +10,18 @@ class Select extends React.Component
     }
 
     getOptionGroups() {
-        let uniqueoptiongroups = this.props.options
+        return this.props.options
             .map(el => {
                 return el.optiongroup
             })
             .filter((item, idx, arr) => arr.indexOf(item) === idx)
-        let groupedOptions = []
-        for (let group in uniqueoptiongroups) {
-            const optiongroup = uniqueoptiongroups[group]
-            const options = this.props.options.filter(item => item.optiongroup === optiongroup)
-            groupedOptions.push({
-                label: optiongroup,
-                options: options
+            .map( group => {
+                const options = this.props.options.filter( opt => opt.optiongroup === group)
+                return {
+                    label: group,
+                    options: options
+                }
             })
-        }
-
-        return groupedOptions
     }
 
     optiongroup = (label, options) => {
