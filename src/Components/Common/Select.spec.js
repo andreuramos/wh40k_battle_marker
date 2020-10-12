@@ -45,8 +45,8 @@ describe('Select', () => {
 
         const select = shallow(<Select options={options} group={true}/>)
 
-        expect(select.find('optiongroup').length).toBe(2)
-        const group1 = select.find('optiongroup[label="group1"]')
+        expect(select.find('optgroup').length).toBe(2)
+        const group1 = select.find('optgroup[label="group1"]')
         expect(group1.find('option').length).toBe(2)
     })
 })

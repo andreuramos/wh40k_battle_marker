@@ -30,11 +30,11 @@ class Select extends React.Component
 
     optiongroup = (label, options) => {
         return (
-            <optiongroup label={label} key={label}>
+            <optgroup label={label} key={label}>
                 {options.map( (element,i) => {
                     return <option value={element.value} key={i}>{element.text}</option>
                 })}
-            </optiongroup>
+            </optgroup>
         )
     }
 
