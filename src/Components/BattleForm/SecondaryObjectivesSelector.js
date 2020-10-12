@@ -33,6 +33,7 @@ class SecondaryObjectivesSelector extends Component
                     name='select-objective'
                     onChange={this.selectObjective}
                     defaultText="Select an Objective"
+                    group={true}
                 />
                 <Button text='Select' onClick={this.submitForm} />
             </div>

@@ -43,7 +43,7 @@ class SecondaryObjectivesForm extends React.Component
             }
             return true;
         }).map((element) => {
-            return {text: element.name(), value:element.key()}
+            return {text: element.name(), value:element.key(), optiongroup:element.category()}
         })
         this.setState({objectiveOptions: selectableObjectives})
     }
