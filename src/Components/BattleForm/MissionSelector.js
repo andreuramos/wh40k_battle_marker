@@ -55,19 +55,22 @@ class MissionSelector extends React.Component {
         let mission_options = this.state.missions.map(e => {
             return {
                 value: e.name(),
-                text: e.name()
+                text: e.name(),
+                optiongroup: e.battleSize()
             };
-        })
-        mission_options.unshift({
-            value: null,
-            text: "Select a mission"
         })
 
         return (
             <div>
 
                 <span>Selecciona una misión</span>
-                <Select name="mission" onChange={this.selectMission} options={mission_options}></Select>
+                <Select
+                    name="mission"
+                    onChange={this.selectMission}
+                    options={mission_options}
+                    group={true}
+                    defaultText="Select a Mission"
+                />
                 {this.state.selectedMission ? <div className="mission-details">
                     <div className='mission-details-row'>
                         <span className='mission-details-title'>Battle Size</span>
