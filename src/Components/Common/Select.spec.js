@@ -25,6 +25,7 @@ describe('Select', () => {
             return item.prop('name') === 'missions'
         }).length).toBe(1)
     })
+
     it('executes callback onchange', () => {
         const callback = jest.fn();
         const options = [{value:1, text: 1},{value:2, text:2}]
@@ -33,5 +34,19 @@ describe('Select', () => {
 
         select.find('.form-select').simulate('change', {target: {value: options[1].value}});
         expect(callback.mock.calls.length).toEqual(1)
+    })
+
+    it('renders option groups if group prop is set to true', () => {
+        const options = [
+            {value:1, text:"1", optiongroup: "group1"},
+            {value:2, text:"2", optiongroup: "group1"},
+            {value:3, text:"3", optiongroup: "group2"},
+        ]
+
+        const select = shallow(<Select options={options} group={true}/>)
+
+        expect(select.find('optiongroup').length).toBe(2)
+        const group1 = select.find('optiongroup[label="group1"]')
+        expect(group1.find('option').length).toBe(2)
     })
 })
