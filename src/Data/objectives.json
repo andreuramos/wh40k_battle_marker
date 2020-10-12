@@ -51,7 +51,7 @@
     "name": "Ataque Quirúrgico",
     "key": "surgical_attack",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final del turno, puntúa al controlar el marcador de la zona de despliegue del oponente",
     "trigger": "end_of_turn",
     "skip_rounds": [],
@@ -66,7 +66,7 @@
     "name": "Reconocimiento",
     "key": "recognition",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Obtén 5 puntos por controlar los dos marcadores que no están en zona de despliegue",
     "trigger": "start_of_turn",
     "skip_rounds": [1],
@@ -82,7 +82,7 @@
     "name": "Rodear",
     "key": "surround",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final del turno, 3 Puntos de victoria por tener alguna unidad completamente a 6\" o menos del borde de la zona de despliegue del oponente; o 5 si almenos una unidad está completamente dentro de la zona de despliegue del oponente",
     "trigger": "end_of_turn",
     "skip_rounds": [],
@@ -102,7 +102,7 @@
     "name": "Líneas de Demarcación",
     "key": "demarcation_lines",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final del turno, 4 puntos por controlar ambos objetivos A, o 2 por controlar ambos marcadores B",
     "trigger": "end_of_turn",
     "skip_rounds": [],
@@ -122,7 +122,7 @@
     "name": "Flanquear",
     "key": "flank",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final de la fase de mando, 3 puntos por controlar ambos marcadores A. 5 puntos por a demás, tener una unidad a 9\" del centro del campo de batalla",
     "trigger": "start_of_turn",
     "skip_rounds": [1],
@@ -142,7 +142,7 @@
     "name": "Terreno Central",
     "key": "central_terrain",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Realizar acciones en los marcadores A. Empiezan al final de la fase de movimiento y terminan al final de la fase de mando. Al completar la acción, puntúa 3 si controlas un único marcador A o 5 si controlas los 2",
     "trigger": "start_of_turn",
     "skip_rounds": [1],
@@ -162,7 +162,7 @@
     "name": "Seguir Adelante",
     "key": "keep_forward",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Realizar acciones en los marcadores, puntuando según la distancia: \n - Marcador en la zona de despliegue propia: 1 punto \n - Marcador más cercano a la zona de despliegue propia: 2 puntos\n - Marcador más cercano a la zona de despliegue enemiga: 4 puntos\n - Marcador en la zona de despliegue enemiga: 8 puntos\n La acción se inicia al inicio de la fase de movimiento y se completa al final del turno",
     "trigger": "end_of_turn",
     "skip_rounds": [],
@@ -190,7 +190,7 @@
     "name": "Saqueo",
     "key": "plunder",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final de la fase de mando, puntúa según los objetivos que controlas en el territorio enemigo",
     "trigger": "start_of_turn",
     "skip_rounds": [],
@@ -214,7 +214,7 @@
     "name": "Examinar su línea",
     "key": "examinate_their_lines",
     "type": "secondary",
-    "category": "main",
+    "category": "Secundaria Sugerida",
     "description": "Al final del turno puntúa 3 si tienes 2 unidades en la zona de despliegue enemiga, a 6\" de dos bordes del campo de batalla distintos. Si alguno de esos bordes es el del campo de batalle enmigo, puntúa 5",
     "trigger": "end_of_turn",
     "skip_rounds": [],
@@ -234,7 +234,7 @@
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",
-    "category": "purgue_the_enemy",
+    "category": "Purgar al Enemigo",
     "description": "Al final de la partida obtienes 3 puntos de victoria por cada criatura PERSONAJE enemiga que sea eliminada",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -250,7 +250,7 @@
     "name": "Abatir Blanco Grande",
     "key": "beat_big_target",
     "type": "secondary",
-    "category": "purgue_the_enemy",
+    "category": "Purgar al Enemigo",
     "description": "Al final de la partida obtienes 2 puntos de victoria por cada criatura MONSTRUO o VEHICULO enemiga con 10 o menos heridas que sea eliminada y 3 por cada criatura MONSTRUO o VEHICULO con 11 o más heridas",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -270,7 +270,7 @@
     "name": "Matatitanes",
     "key": "titan_slayer",
     "type": "secondary",
-    "category": "purgue_the_enemy",
+    "category": "Purgar al Enemigo",
     "description": "Obtienes 10 puntos por eliminar a una unidad TITAN enemiga. 15 por eliminar a dos o más",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -290,7 +290,7 @@
     "name": "Eliminar al señor de la guerra",
     "key": "slay_the_warlord",
     "type": "secondary",
-    "category": "purgue_the_enemy",
+    "category": "Purgar al Enemigo",
     "description": "Al final de la partida obtienes 6 puntos de victoria si el SEÑOR DE LA GUERRA enemigo es eliminado",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -306,7 +306,7 @@
     "name": "Diezmar sus filas",
     "key": "thin_their_ranks",
     "type": "secondary",
-    "category": "no_mercy_no_respite",
+    "category": "Sin descanso, sin Respiro",
     "description": "Al final de la partida obtienes 1/10 puntos de victoria por cada miniatura enemiga eliminada o 1 punto si ésta tiene 10+ heridas",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -326,7 +326,7 @@
     "name": "Desgaste",
     "key": "attrition",
     "type": "secondary",
-    "category": "no_mercy_no_respite",
+    "category": "Sin descanso, sin Respiro",
     "description": "Al final de la ronda obtienes 4 puntos si han sido eliminadas más unidades enemigas que amigas",
     "trigger": "end_of_round",
     "skip_rounds": [],
@@ -342,7 +342,7 @@
     "name": "Mientras resistamos, pelearemos",
     "key": "while_we_stand_we_fight",
     "type": "secondary",
-    "category": "no_mercy_no_respite",
+    "category": "Sin descanso, sin Respiro",
     "description": "Las 3 miniaturas con más puntos (incluyendo armas) sobreviven al final de la batalla",
     "trigger": "end_of_battle",
     "skip_rounds": [],
@@ -366,7 +366,7 @@
     "name": "Golpear Primero",
     "key": "first_strike",
     "type": "secondary",
-    "category": "no_mercy_no_respite",
+    "category": "Sin descanso, sin Respiro",
     "description": "5 puntos por eliminar una unidad enemiga en la primera ronda. 3 adicionales si en la primera ronda se han elminado más unidades enemigas que amigas",
     "trigger": "end_of_round",
     "skip_rounds": [2,3,4,5],
@@ -378,6 +378,58 @@
       },
       {
         "description": "Más unidades enemigas que amigas eliminadas",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Luchar en todos los frentes",
+    "key": "fight_all_fronts",
+    "type": "secondary",
+    "category": "Supremacía en el campo de batalla",
+    "description": "2 puntos de victoria al final del turno si tienes una o más unidades dentro de tres cuartos distintos del tablero y a más de 6\" del centro. Si ocupas los 4 cuartos obtienes 3",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Una unidad en 3 de los 4 cuartos y a 6\"+ del centro",
+        "points": "2"
+      },
+      {
+        "description": "Una unidad en cada cuadrante y a 6\"+ del centro",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Rompelíneas",
+    "key": "linebreaker",
+    "type": "secondary",
+    "category": "Supremacía en el campo de batalla",
+    "description": "4 puntos de victoria al final del turno si 2+ unidades de tu ejércido (excepto AERONAVE) están completamente en la zona de despliegue enemiga",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Unidad en zona de despliegue enemiga",
+        "points": "4"
+      }
+    ]
+  },
+  {
+    "name": "Dominación",
+    "key": "domination_secondary",
+    "type": "secondary",
+    "category": "Supremacía en el campo de batalla",
+    "description": "3 puntos de victoria al final del turno si controlas más de la mitad de marcadores objetivo que haya en el campo de batalla.",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Controlas más de la mitad de los objetivos",
         "points": "3"
       }
     ]
