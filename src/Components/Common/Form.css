@@ -14,3 +14,11 @@
     border-bottom: solid white 2px;
     color: white;
 }
+
+.text-input.error {
+    border-bottom: solid red 2px;
+}
+
+.error-message {
+    color: red
+}
