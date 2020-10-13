@@ -13,8 +13,7 @@ export default class RadioButton extends React.Component
     render() {
         const input_id = this.props.name + this.props.value;
         return (
-            <div>
-                <label htmlFor={input_id}>{this.props.text}</label>
+            <div className="form-radio-button">
                 <input
                     type="radio"
                     id={input_id}
@@ -23,6 +22,7 @@ export default class RadioButton extends React.Component
                     onChange={this.handleChange}
                     checked={this.props.checked}
                 />
+                <label htmlFor={input_id}>{this.props.text}</label>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import "./RadioInput.css";
 
 export default class RadioInput extends React.Component
 {
@@ -19,7 +20,7 @@ export default class RadioInput extends React.Component
 
     render() {
         return (
-            <div>
+            <div className="form-radio-input">
                 { this.props.children.map((el, i) => {
                     const checked = el.props.value === this.state.value;
                     return React.cloneElement(el, {

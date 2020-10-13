@@ -1,0 +1,21 @@
+.form-radio-input {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form-radio-button {
+    padding-bottom: .5em;
+    padding-top: .5em;
+    margin-left: 3em;
+    margin-right: 3em;
+    text-align: left;
+}
+
+.form-radio-button:hover {
+    background-color: var(--background-light-color);
+}
+
+.form-radio-button input {
+    margin-right: 1em;
+    margin-left: 1em;
+}
