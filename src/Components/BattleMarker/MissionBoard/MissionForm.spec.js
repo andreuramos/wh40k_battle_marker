@@ -2,27 +2,34 @@ import React from "react";
 import {configure, shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import MissionForm from "./MissionForm";
+import Objective from "../../../Core/Domain/Objective";
 
 configure({adapter: new Adapter()});
 
 describe('MissionForm', () => {
+
+    const objectives = [
+        new Objective("Domination", "domination", "something decribing", "main", "main"),
+        new Objective("Rise the banner high", "risethebanner", "something decribing", "secondary", "main"),
+    ]
+
     it('Submits when form is valid', () => {
         const callback = jest.fn()
-        const component = shallow(<MissionForm onSubmit={callback}/>)
+        const component = shallow(<MissionForm onSubmit={callback} playerObjectives={objectives}/>)
 
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionName', value:"Rise the banner high"}})
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionPoints', value:3}})
+        component.find('[name="objective"]').simulate('change', "risethebanner")
+        console.log(component.state())
+        component.find('[name="missionPoints"]').simulate('change', {target: {name:'missionPoints', value:3}})
         component.find('#submit-mission-form').simulate('click')
 
         expect(callback.mock.calls.length).toBe(1)
     })
 
-    it('Does not submit if mission name is too short', () => {
+    it('Does not submit if there is no mission selected', () => {
         const callback = jest.fn()
-        const component = shallow(<MissionForm onSubmit={callback}/>)
+        const component = shallow(<MissionForm onSubmit={callback} playerObjectives={objectives}/>)
 
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionName', value:"a"}})
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionPoints', value:3}})
+        component.find('[name="missionPoints"]').simulate('change', {target: {name:'missionPoints', value:3}})
         component.find('#submit-mission-form').simulate('click')
 
         expect(callback.mock.calls.length).toBe(0)
@@ -30,10 +37,10 @@ describe('MissionForm', () => {
 
     it('Does not submit if mission points is less than 1', () => {
         const callback = jest.fn()
-        const component = shallow(<MissionForm onSubmit={callback}/>)
+        const component = shallow(<MissionForm onSubmit={callback} playerObjectives={objectives}/>)
 
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionName', value:"First Strike"}})
-        component.find('[name="missionName"]').simulate('change', {target: {name:'missionPoints', value:0}})
+        component.find('[name="objective"]').simulate('change', {target: {value:"domination"}})
+        component.find('[name="missionPoints"]').simulate('change', {target: {name:'missionPoints', value:0}})
         component.find('#submit-mission-form').simulate('click')
 
         expect(callback.mock.calls.length).toBe(0)

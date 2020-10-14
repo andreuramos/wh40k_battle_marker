@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../Common/Button";
 import "../../Common/Form.css";
 import CompletedMission from "../../../Core/Domain/CompletedMission";
+import Select from "../../Common/Select";
 
 
 class MissionForm extends React.Component
@@ -9,20 +10,26 @@ class MissionForm extends React.Component
     constructor(props) {
         super(props)
         this.state = {
-            missionName: '',
+            objective: null,
             missionPoints: 0,
+            objectives: this.props.playerObjectives.map((el) => {return {text: el.name(), value: el.key()}}),
             errors: {}
         }
     }
 
-    handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value});
+    handlePointsChange = (e) => {
+        this.setState({missionPoints: e.target.value});
+    }
+
+    handleObjectiveChange = (obj) => {
+        const objective = this.props.playerObjectives.filter(el => el.key() === obj)[0]
+        this.setState({objective: objective})
     }
 
     validate() {
         let errors = {}
-        if (this.state.missionName.length < 3) {
-            errors.missionName = "Mission name is too short"
+        if (!this.state.objective) {
+            errors.objective = "You must select an objective"
         }
         if (this.state.missionPoints < 1) {
             errors.missionPoints = "Points must be greater than 0"
@@ -32,14 +39,14 @@ class MissionForm extends React.Component
 
     submitForm = () => {
         const errors = this.validate()
-        if (errors.missionName || errors.missionPoints) {
+        if (errors.objective || errors.missionPoints) {
             this.setState({errors: errors})
             return
         }
 
         if (this.props.onSubmit) {
             const mission = new CompletedMission(
-                this.state.missionName,
+                this.state.objective.name(),
                 this.state.missionPoints,
                 this.props.round
             );
@@ -53,16 +60,14 @@ class MissionForm extends React.Component
                 <form className="form-group">
                     <div className="input-group">
                         <label htmlFor="mission-name">Mission</label>
-                        <input
-                            className={this.state.errors.missionName ? "text-input error" : "text-input"}
-                            type="text"
-                            name="missionName"
-                            autoComplete="off"
-                            value={this.state.missionName}
-                            onChange={this.handleChange}
+                        <Select
+                            name="objective"
+                            options={this.state.objectives}
+                            defaultText="Select an objective"
+                            onChange={this.handleObjectiveChange}
                         />
-                        { this.state.errors.missionName ?
-                            <span className="error-message">{this.state.errors.missionName}</span> : ""
+                        { this.state.errors.objective ?
+                            <span className="error-message">{this.state.errors.objective}</span> : ""
                         }
                     </div>
 
@@ -74,7 +79,7 @@ class MissionForm extends React.Component
                             name="missionPoints"
                             autoComplete="off"
                             value={this.state.missionPoints}
-                            onChange={this.handleChange}
+                            onChange={this.handlePointsChange}
                         />
                         { this.state.errors.missionPoints ?
                             <span className="error-message">{this.state.errors.missionPoints}</span> : ""

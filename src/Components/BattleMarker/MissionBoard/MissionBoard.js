@@ -51,6 +51,7 @@ class MissionBoard extends React.Component
                     <MissionForm
                         onSubmit={this.onMissionSubmit}
                         round={this.props.round}
+                        playerObjectives={this.state.player.objectives()}
                     />
                 </Modal>
             </div>
