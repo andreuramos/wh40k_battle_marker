@@ -27,7 +27,7 @@ class SecondaryObjectivesForm extends React.Component
     componentDidMount() {
         GetSecondaryObjectives.execute().then((objectives) => {
             let all_objectives = objectives
-            all_objectives.push(this.props.suggestedObjective)
+            all_objectives.unshift(this.props.suggestedObjective)
             this.setState({allObjectives: all_objectives})
             this.updateSelectableObjectives()
         })
