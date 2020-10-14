@@ -18,7 +18,7 @@ class MissionForm extends React.Component
     }
 
     handlePointsChange = (e) => {
-        this.setState({missionPoints: e.target.value});
+        this.setState({missionPoints: parseInt(e.target.value)});
     }
 
     handleObjectiveChange = (obj) => {
