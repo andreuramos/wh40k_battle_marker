@@ -24,7 +24,7 @@ class MissionSelector extends React.Component {
 
     selectMission = (selected_mission_name) => {
         const selected_mission = this.state.missions.find(mission =>  mission.name() === selected_mission_name)
-        this.setState({selectedMission: selected_mission});
+        this.setState({selectedMission: selected_mission, error: null});
     }
 
     submitForm = () => {
@@ -82,7 +82,10 @@ class MissionSelector extends React.Component {
                         />
                     </div>
                 </div>:null}
-                <Button text="Next" onClick={this.submitForm}></Button>
+                { this.state.error ?
+                    <span className='error-message'>{this.state.error}</span> : null
+                }
+                <Button text="Next" onClick={this.submitForm} id="submit_mission"></Button>
             </div>
         )
     }
