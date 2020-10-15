@@ -26,7 +26,8 @@
 }
 
 .player-board-score {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     height: calc(30% - .5em);
     font-size: 100px;
     display: flex;
@@ -51,6 +52,7 @@
     position: fixed;
     font-size: 40px;
     vertical-align: top;
+    cursor: pointer;
 }
 
 .player-board-command-points {
