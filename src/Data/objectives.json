@@ -433,5 +433,105 @@
         "points": "3"
       }
     ]
+  },
+  {
+    "name": "Investigar Localizaciones",
+    "key": "investigate_sites",
+    "type": "secondary",
+    "category": "Operaciones en la Sombra",
+    "description": "3 puntos por completar la acción: una unidad de INFANTERIA excepto PERSONAJES puede empezarla al final de su fase de movimiento si está a 6\" o menos del centro del campo y no hay unidades enemigas excepto AERONAVES a 6\" o menos del centro del campo de batalla. La acción se completa al final del turno",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Acción realizada",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Reparar Baliza de Teleportación",
+    "key": "repair_teleport",
+    "type": "secondary",
+    "category": "Operaciones en la Sombra",
+    "description": "5 puntos por completar acción: una unidad de INFANTERIA puede empezarla al final de su fase de movimiento si está completamente en la zona de despliegue enemiga. La acción se completa al final de la siguiente fase de mando si la unidad sigue estando completamente en la zona de despliegue enemiga",
+    "trigger": "start_of_turn",
+    "skip_rounds": [1],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Acción realizada",
+        "points": "5"
+      }
+    ]
+  },
+  {
+    "name": "Alzar bien alto los Estandartes",
+    "key": "rise_the_banner_high",
+    "type": "secondary",
+    "category": "Operaciones en la Sombra",
+    "description": "Una o más unidades de INFANTERIA pueden empezarla al final de la fase de movimiento, si está dentro del alcance de un marcador de objetivo que no tenga ya uno de tus estandartes alzado y no hay unidades enemigas (excepto AERONAVE) en el mismo marcador. La acción se completa al final del turno. El estandarte es retirado si el enemigo controla ese objetivo. Al final de cada fase de mando obtienes 1 punto de victoria por cada estandarte alzado. Al final de la batalla obtienes 1 puto de victoria por cada estandarte alzado.",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Marcadores con estandarte alzado",
+        "points": "1"
+      }
+    ]
+  },
+  {
+    "name": "Interrogación Mental",
+    "key": "mental_interrogation",
+    "type": "secondary",
+    "category": "Tejer la Disformidad",
+    "description": "3 puntos por completar acción psíquica: un PERSONAJE PSÍQUICO puede realizar esta acción en la fase psíquica si está a 18\" de un PERSONAJE enemigo",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Acción psíquica realizada",
+        "points": "3"
+      }
+    ]
+  },
+  {
+    "name": "Ritual Psíquico",
+    "key": "psychic_ritual",
+    "type": "secondary",
+    "category": "Tejer la Disformidad",
+    "description": "15 puntos al final de la batalla si has completado 3 veces la acción: un PERSONAJE PSIQUICO puede realizar esta acción psíquica si está a 6\" del centro del campo de batalla",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Acción psiquica realizada 3 veces",
+        "points": "15"
+      }
+    ]
+  },
+  {
+    "name": "Negar la Bruja",
+    "key": "abhor_the_witch",
+    "type": "secondary",
+    "category": "Tejer la Disformidad",
+    "description": "No puedes seleccionar este objetivo si tienes alguna unidad PSIQUICO. 5 punots al final de la batalla por cada PERSONAJE PSIQUICO eliminado y 3 por cada otra unidad PSIQUICO eliminada",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Personajes Psíquico eliminados",
+        "points": "5"
+      },
+      {
+        "description": "Unidades Psiquico eliminados",
+        "points": "3"
+      }
+    ]
   }
 ]
