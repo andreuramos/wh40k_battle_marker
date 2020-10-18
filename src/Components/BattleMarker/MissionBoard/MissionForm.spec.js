@@ -18,7 +18,6 @@ describe('MissionForm', () => {
         const component = shallow(<MissionForm onSubmit={callback} playerObjectives={objectives}/>)
 
         component.find('[name="objective"]').simulate('change', "risethebanner")
-        console.log(component.state())
         component.find('[name="missionPoints"]').simulate('change', {target: {name:'missionPoints', value:3}})
         component.find('#submit-mission-form').simulate('click')
 
