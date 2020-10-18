@@ -18,7 +18,7 @@ export default class BattleBuilder
         }
 
         for (let key in data.player2_objectives) {
-            let objective = data.player1_objectives[key]
+            let objective = data.player2_objectives[key]
             if (objective) {
                 player2.addObjective(objective)
             }
