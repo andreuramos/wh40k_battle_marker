@@ -11,11 +11,17 @@ class App extends React.Component {
         super();
         this.state = {
             ongoingBattle: null,
-            buildingBattle: false
+            buildingBattle: false,
+            battleOnStorage: false
         }
     }
 
     componentDidMount() {
+        if (localStorage.getItem('battle')) {
+            this.setState({
+                battleOnStorage: true
+            })
+        }
         setInterval(this.saveOngoingBattle.bind(this), 5000)
     }
 
@@ -27,10 +33,21 @@ class App extends React.Component {
         });
     }
 
+    resumeBattle = () => {
+        const storedBattle = localStorage.getItem('battle')
+        const battle = BattleBuilder.fromJson(storedBattle)
+        this.setState({
+            ongoingBattle: battle
+        })
+    }
+
     handleEndBattle = (battle) => {
         console.log("Battle ended", battle.startedAt(), battle.endedAt(), battle);
-        localStorage.removeItem('battle');
-        this.setState({ongoingBattle: null});
+        this.setState({
+            ongoingBattle: null,
+            battleOnStorage: false
+        });
+        localStorage.removeItem('battle')
     }
 
     showModal = () => {
@@ -45,6 +62,7 @@ class App extends React.Component {
     saveOngoingBattle() {
         if (this.state.ongoingBattle) {
             localStorage.setItem('battle', JSON.stringify(this.state.ongoingBattle));
+            this.setState({battleOnStorage: true});
         }
     }
 
@@ -56,7 +74,20 @@ class App extends React.Component {
                       <img src='/logo.webp' className="App-logo" alt="Under construction"/> : null
                   }
                   { this.state.ongoingBattle == null ?
-                      <Button onClick={this.showModal} text="New Battle" />
+                      <div>
+                          <Button
+                              text="New Battle"
+                              onClick={this.showModal}
+                          />
+                          { this.state.battleOnStorage !== false ?
+                            <Button
+                                  text="Resume"
+                                  onClick={this.resumeBattle}
+                                  type='secondary-button'
+                              />
+                              : null
+                          }
+                      </div>
                       :
                       <BattleMarker
                           battle={this.state.ongoingBattle}
