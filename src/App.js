@@ -15,6 +15,10 @@ class App extends React.Component {
         }
     }
 
+    componentDidMount() {
+        setInterval(this.saveOngoingBattle.bind(this), 5000)
+    }
+
     startBattle = (formData) => {
         const battle = BattleBuilder.fromForm(formData)
         this.setState({
@@ -25,7 +29,7 @@ class App extends React.Component {
 
     handleEndBattle = (battle) => {
         console.log("Battle ended", battle.startedAt(), battle.endedAt(), battle);
-
+        localStorage.removeItem('battle');
         this.setState({ongoingBattle: null});
     }
 
@@ -36,6 +40,12 @@ class App extends React.Component {
     cancelNewBattle = () => {
         console.log("cancelling new battle")
         this.setState({buildingBattle: false});
+    }
+
+    saveOngoingBattle() {
+        if (this.state.ongoingBattle) {
+            localStorage.setItem('battle', JSON.stringify(this.state.ongoingBattle));
+        }
     }
 
   render() {
