@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 import BattleMarker from "./Components/BattleMarker/BattleMarker";
-import Battle from "./Core/Domain/Battle";
 import Button from "./Components/Common/Button";
 import Modal from "./Components/Common/Modal";
-import Player from "./Core/Domain/Player";
 import BattleForm from "./Components/BattleForm/BattleForm";
 import BattleBuilder from "./Core/Domain/BattleBuilder";
 
