@@ -7,6 +7,7 @@
     font-family: "DejaVu Sans";
     text-transform: uppercase;
     cursor: pointer;
+    box-shadow: 0 8px 20px 5px rgba(0,0,0, 0.4);
 }
 
 

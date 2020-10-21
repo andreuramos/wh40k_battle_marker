@@ -26,3 +26,8 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+#resume-battle-button {
+  margin-top: 1em;
+  padding:0;
+}

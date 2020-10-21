@@ -84,6 +84,7 @@ class App extends React.Component {
                                   text="Resume"
                                   onClick={this.resumeBattle}
                                   type='secondary-button'
+                                  id="resume-battle-button"
                               />
                               : null
                           }
