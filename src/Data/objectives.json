@@ -28,17 +28,17 @@
     "key": "domination",
     "type": "main",
     "category": "main",
-    "description": "Al final de la fase de mando de cada jugador, según los marcadores que controla",
+    "description": "Al final de la fase de mando de cada jugador, según los marcadores que controla:<br><ul><li>5 puntos por controlar 2+ marcadores</li><li>5 puntos por controlar 3+ marcadores</li><li>5 puntos por controlar más marcadores que el oponente</li></ul>",
     "trigger": "start_of_turn",
     "skip_rounds": [1],
     "max_score": 15,
     "scoring": [
       {
-        "description": "Controlar 2+ marcador",
+        "description": "Controlar 2+ marcadores",
         "points": 5
       },
       {
-        "description": "Controlar 2+ marcadores",
+        "description": "Controlar 3+ marcadores",
         "points": 5
       },
       {
@@ -52,7 +52,7 @@
     "key": "surgical_attack",
     "type": "secondary",
     "category": "Secundaria Sugerida",
-    "description": "Al final del turno, puntúa al controlar el marcador de la zona de despliegue del oponente",
+    "description": "Al final del turno, obtienes 5 puntos al controlar el marcador de la zona de despliegue del oponente",
     "trigger": "end_of_turn",
     "skip_rounds": [],
     "scoring": [
@@ -163,7 +163,7 @@
     "key": "keep_forward",
     "type": "secondary",
     "category": "Secundaria Sugerida",
-    "description": "Realizar acciones en los marcadores, puntuando según la distancia: \n - Marcador en la zona de despliegue propia: 1 punto \n - Marcador más cercano a la zona de despliegue propia: 2 puntos\n - Marcador más cercano a la zona de despliegue enemiga: 4 puntos\n - Marcador en la zona de despliegue enemiga: 8 puntos\n La acción se inicia al inicio de la fase de movimiento y se completa al final del turno",
+    "description": "Realizar acciones en los marcadores, puntuando según la distancia: <br><ul><li>Marcador en la zona de despliegue propia: 1 punto</li><li>Marcador más cercano a la zona de despliegue propia: 2 puntos</li><li>Marcador más cercano a la zona de despliegue enemiga: 4 puntos</li><li>Marcador en la zona de despliegue enemiga: 8 puntos</li></ul>La acción se inicia al inicio de la fase de movimiento y se completa al final del turno",
     "trigger": "end_of_turn",
     "skip_rounds": [],
     "max_score": null,
@@ -191,7 +191,7 @@
     "key": "plunder",
     "type": "secondary",
     "category": "Secundaria Sugerida",
-    "description": "Al final de la fase de mando, puntúa según los objetivos que controlas en el territorio enemigo",
+    "description": "Al final de la fase de mando, puntúa según los objetivos que controlas en el territorio enemigo:<br><ul><li>2 puntos por controlar 1 marcador en territorio enemigo</li><li>5 puntos por controlar 2 objetivos en territorio enemigo</li><li>8 puntos por controlar 3 objetivos en territorio enemigo</li></ul>",
     "trigger": "start_of_turn",
     "skip_rounds": [],
     "max_score": null,
@@ -307,14 +307,14 @@
     "key": "thin_their_ranks",
     "type": "secondary",
     "category": "Sin descanso, sin Respiro",
-    "description": "Al final de la partida obtienes 1/10 puntos de victoria por cada miniatura enemiga eliminada o 1 punto si ésta tiene 10+ heridas",
+    "description": "Al final de la partida obtienes 1 punto de victoria por cada 10 miniaturas enemiga eliminada o 1 punto si ésta tiene 10+ heridas",
     "trigger": "end_of_battle",
     "skip_rounds": [],
     "max_score": null,
     "scoring": [
       {
-        "description": "miniatura enemiga eliminada",
-        "points": "1/10"
+        "description": "10 miniaturas enemigas eliminadas",
+        "points": 1
       },
       {
         "descripción": "miniatura enemiga con 10+ heridas eliminada",
@@ -343,7 +343,7 @@
     "key": "while_we_stand_we_fight",
     "type": "secondary",
     "category": "Sin descanso, sin Respiro",
-    "description": "Las 3 miniaturas con más puntos (incluyendo armas) sobreviven al final de la batalla",
+    "description": "Selecciona las 3 miniaturas con más puntos (incluyendo armas). Obtienes 4 puntos por cada una que sobreviva al final de la batalla",
     "trigger": "end_of_battle",
     "skip_rounds": [],
     "max_score": null,
@@ -471,7 +471,7 @@
     "key": "rise_the_banner_high",
     "type": "secondary",
     "category": "Operaciones en la Sombra",
-    "description": "Una o más unidades de INFANTERIA pueden empezarla al final de la fase de movimiento, si está dentro del alcance de un marcador de objetivo que no tenga ya uno de tus estandartes alzado y no hay unidades enemigas (excepto AERONAVE) en el mismo marcador. La acción se completa al final del turno. El estandarte es retirado si el enemigo controla ese objetivo. Al final de cada fase de mando obtienes 1 punto de victoria por cada estandarte alzado. Al final de la batalla obtienes 1 puto de victoria por cada estandarte alzado.",
+    "description": "Una o más unidades de INFANTERIA pueden empezar a realizar la acción al final de la fase de movimiento, si está dentro del alcance de un marcador de objetivo que no tenga ya uno de tus estandartes alzado y no hay unidades enemigas (excepto AERONAVE) en el mismo marcador. La acción se completa al final del turno. El estandarte es retirado si el enemigo controla ese objetivo. Al final de cada fase de mando obtienes 1 punto de victoria por cada estandarte alzado. Al final de la batalla obtienes 1 puto de victoria por cada estandarte alzado.",
     "trigger": "end_of_turn",
     "skip_rounds": [],
     "max_score": null,
