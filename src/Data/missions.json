@@ -16,7 +16,8 @@
       "recognition"
     ],
     "battle_size": "Patrulla",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": ""
   },
   {
     "name": "Rodear",
@@ -25,7 +26,8 @@
       "surround"
     ],
     "battle_size": "Patrulla",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": ""
   },
   {
     "name": "Divide y Conquista",
@@ -34,7 +36,8 @@
       "demarcation_lines"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": ""
   },
   {
     "name": "Fuego Cruzado",
@@ -43,7 +46,8 @@
       "flank"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "<b>Fuego Cruzado:</b> Cuando resuelves ataques contra unidades blanco que estén a 9\" o menos del centro del campo de batalla, esos ataques ignoran los beneficios de cobertura siempre y cuando se cumpla al menos una de las siguientes condiciones:<br></ul><li>Controlas ambos marcadores A y la unidad atacante está dentro del alcance del marcador A</li><li>Controlas ambos marcadores B y la unidad atacante está dentro del alcance del marcador B</li></ul><br>"
   },
   {
     "name": "Terreno Central",
@@ -52,7 +56,8 @@
       "central_terrain"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": ""
   },
   {
     "name": "Seguir Adelante",
@@ -61,7 +66,8 @@
       "keep_forward"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "<b>Marcha Rápida</b>:Cualquier tirada de avanzar inferior a 3 hecha en la primera ronda de batalla se considerará de 3.<br><br>"
   },
   {
     "name": "Saqueo",
@@ -70,7 +76,8 @@
       "plunder"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": ""
   },
   {
     "name": "Frente en Movimiento",
@@ -79,6 +86,7 @@
       "examinate_their_lines"
     ],
     "battle_size": "Incursion",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "<b>Líneas de suministro:</b> Un jugador sólo recibe la bonificación de Puntos de Mando veteranos al inicio de su fase de mando si controla el marcador de su zona de despliegue.<br><br>"
   }
 ]
