@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Select from "../Common/Select";
 import Button from "../Common/Button";
+import "./SecondaryObjectivesSelector.css"
 
 class SecondaryObjectivesSelector extends Component
 {
@@ -8,12 +9,20 @@ class SecondaryObjectivesSelector extends Component
         super(props);
         this.state = {
             objectiveOptions: this.props.options,
-            selectedObjective: null
+            selectedObjective: null,
+            selectedObjectiveDescription: null
         };
     }
 
     selectObjective = (value) => {
-        this.setState({selectedObjective: value})
+        const option = this.state.objectiveOptions.find( item => item.value === value)
+        let description = null;
+        if (option) description = option.description
+
+        this.setState({
+            selectedObjective: value,
+            selectedObjectiveDescription: description
+        })
     }
 
     submitForm = () => {
@@ -29,13 +38,20 @@ class SecondaryObjectivesSelector extends Component
         return (
             <div>
                 <Select
-                    options={this.state.objectiveOptions}
+                    options={ this.state.objectiveOptions }
                     name='select-objective'
-                    onChange={this.selectObjective}
-                    defaultText="Select an Objective"
-                    group={true}
+                    onChange={ this.selectObjective }
+                    defaultText="None selected"
+                    group={ true }
                 />
-                <Button text='Select' onClick={this.submitForm} />
+
+                { this.state.selectedObjective ?
+                    <div className="description-block">
+                        { this.state.selectedObjectiveDescription }
+                    </div> : null
+                }
+
+                <Button text='Select' onClick={this.submitForm} id="submit-selected-objective"/>
             </div>
         )
     }
