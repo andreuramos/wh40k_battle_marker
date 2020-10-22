@@ -11,8 +11,10 @@ body {
 }
 
 .App-logo {
-  height: 20vmin;
   pointer-events: none;
+  max-width: 1000px;
+  height: auto;
+  margin-bottom: 2em;
 }
 
 .App-body {

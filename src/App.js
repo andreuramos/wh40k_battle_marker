@@ -71,7 +71,7 @@ class App extends React.Component {
           <div className="App">
               <div className="App-body">
                   { this.state.ongoingBattle == null ?
-                      <img src='/logo.webp' className="App-logo" alt="Under construction"/> : null
+                      <img src='/logo.png' className="App-logo" alt="Under construction"/> : null
                   }
                   { this.state.ongoingBattle == null ?
                       <div>
