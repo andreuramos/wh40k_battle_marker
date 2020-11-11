@@ -80,20 +80,16 @@ class BattleForm extends React.Component
     {
         if (this.state.step === 'player-names') {
             return (
-                <div>
-                    <PlayersNameForm onSubmit={this.submitPlayersForm}/>
-                </div>
+                <PlayersNameForm onSubmit={this.submitPlayersForm}/>
             )
         }
 
         if (this.state.step === 'mission') {
             return (
-                <div>
-                    <MissionSelector
-                        onSubmit={ this.submitMissionForm }
-                        onBack={ this.goBack }
-                    />
-                </div>
+                <MissionSelector
+                    onSubmit={ this.submitMissionForm }
+                    onBack={ this.goBack }
+                />
             )
         }
 
