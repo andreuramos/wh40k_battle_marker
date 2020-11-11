@@ -78,53 +78,45 @@ class BattleForm extends React.Component
 
     render()
     {
-        if (this.state.step === 'player-names') {
-            return (
-                <PlayersNameForm onSubmit={this.submitPlayersForm}/>
-            )
-        }
-
-        if (this.state.step === 'mission') {
-            return (
-                <MissionSelector
+        let step;
+        switch (this.state.step) {
+            case 'player-names':
+                step = <PlayersNameForm onSubmit={this.submitPlayersForm} />; break;
+            case 'mission':
+                step = <MissionSelector
                     onSubmit={ this.submitMissionForm }
                     onBack={ this.goBack }
-                />
-            )
-        }
-
-        if (this.state.step === 'secondary-objectives-player1') {
-            return (
-                <SecondaryObjectivesForm
+                />; break;
+            case 'secondary-objectives-player1':
+                step = <SecondaryObjectivesForm
                     player={ this.state.player1 }
                     suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
                     onSubmit={ this.submitObjectivesForm }
                     onBack={ this.goBack }
-                />
-            )
-        }
-
-        if (this.state.step === 'secondary-objectives-player2') {
-            return (
-                <SecondaryObjectivesForm
+                />; break;
+            case 'secondary-objectives-player2':
+                step = <SecondaryObjectivesForm
                     player={ this.state.player2 }
                     suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
                     onSubmit={ this.submitObjectivesForm }
                     onBack={ this.goBack }
-                />
-            )
-        }
-
-        if (this.state.step === 'starting-player') {
-            return (
-                <StartingPlayerForm
+                />; break;
+            case 'starting-player':
+                step = <StartingPlayerForm
                     player1={ this.state.player1 }
                     player2={ this.state.player2 }
                     onSubmit={ this.submitStartingPlayerForm }
                     onBack={ this.goBack }
-                />
-            )
+                />; break;
+            default:
+                step = null
         }
+
+        return (
+            <div>
+                { step }
+            </div>
+        )
     }
 }
 
