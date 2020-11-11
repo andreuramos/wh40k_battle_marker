@@ -63,7 +63,7 @@ class MissionSelector extends React.Component {
         return (
             <div>
 
-                <span>Selecciona una misión</span>
+                <span>Select a mission</span>
                 <Select
                     name="mission"
                     onChange={this.selectMission}
@@ -85,7 +85,25 @@ class MissionSelector extends React.Component {
                 { this.state.error ?
                     <span className='error-message'>{this.state.error}</span> : null
                 }
-                <Button text="Next" onClick={this.submitForm} id="submit_mission"></Button>
+
+
+                <div className="navigation-buttons">
+                { this.props.onBack ?
+                    <Button
+                        style={{"width": "30%"}}
+                        type='none'
+                        id='back-button'
+                        onClick={this.props.onBack}
+                        text="Back"
+                    /> : null
+                }
+                <Button
+                    text="Next"
+                    onClick={this.submitForm}
+                    id="submit_mission"
+                    style={{'width': this.props.onBack ? '70%':'100%'}}
+                />
+                </div>
             </div>
         )
     }

@@ -9,6 +9,7 @@ class Button extends Component
             className={classes}
             onClick={this.props.onClick}
             id={this.props.id}
+            style={this.props.style}
         >{this.props.text}</div>;
     }
 }

@@ -31,7 +31,12 @@ export default class StartingPlayerForm extends React.Component
                     <RadioButton value={this.props.player1} text={this.props.player1}/>
                     <RadioButton value={this.props.player2} text={this.props.player2}/>
                 </RadioInput>
-                <Button onClick={this.submitStartingPlayer} text="Start Battle" />
+                <div className="navigation-buttons">
+                    { this.props.onBack ?
+                        <Button text="Back" onClick={this.props.onBack} type="none" style={{'width': '30%'}}/> : null
+                    }
+                    <Button text='Start Battle' onClick={this.submitStartingPlayer} style={{'width': '70%'}}/>
+                </div>
             </div>
         )
     }

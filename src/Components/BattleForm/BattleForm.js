@@ -3,6 +3,15 @@ import PlayersNameForm from "./PlayersNameForm";
 import MissionSelector from "./MissionSelector";
 import SecondaryObjectivesForm from "./SecondaryObjectivesForm";
 import StartingPlayerForm from "./StartingPlayerForm";
+import "./BattleForm.css";
+
+const steps = [
+    'player-names',
+    'mission',
+    'secondary-objectives-player1',
+    'secondary-objectives-player2',
+    'starting-player',
+];
 
 class BattleForm extends React.Component
 {
@@ -60,6 +69,13 @@ class BattleForm extends React.Component
         }
     }
 
+    goBack = () => {
+        const current_step_index = steps.indexOf(this.state.step);
+        if (current_step_index > 0) {
+            this.setState({step: steps[(current_step_index - 1)]});
+        }
+    }
+
     render()
     {
         if (this.state.step === 'player-names') {
@@ -73,7 +89,10 @@ class BattleForm extends React.Component
         if (this.state.step === 'mission') {
             return (
                 <div>
-                    <MissionSelector onSubmit={this.submitMissionForm}/>
+                    <MissionSelector
+                        onSubmit={ this.submitMissionForm }
+                        onBack={ this.goBack }
+                    />
                 </div>
             )
         }
@@ -84,6 +103,7 @@ class BattleForm extends React.Component
                     player={ this.state.player1 }
                     suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
                     onSubmit={ this.submitObjectivesForm }
+                    onBack={ this.goBack }
                 />
             )
         }
@@ -94,6 +114,7 @@ class BattleForm extends React.Component
                     player={ this.state.player2 }
                     suggestedObjective={ this.state.mission.suggestedSecondaryObjective() }
                     onSubmit={ this.submitObjectivesForm }
+                    onBack={ this.goBack }
                 />
             )
         }
@@ -101,9 +122,10 @@ class BattleForm extends React.Component
         if (this.state.step === 'starting-player') {
             return (
                 <StartingPlayerForm
-                    player1={this.state.player1}
-                    player2={this.state.player2}
-                    onSubmit={this.submitStartingPlayerForm}
+                    player1={ this.state.player1 }
+                    player2={ this.state.player2 }
+                    onSubmit={ this.submitStartingPlayerForm }
+                    onBack={ this.goBack }
                 />
             )
         }

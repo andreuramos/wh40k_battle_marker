@@ -123,7 +123,12 @@ class SecondaryObjectivesForm extends React.Component
                     )
                 })}
                 </div>
-                <Button text='Next' onClick={this.handleSubmit} />
+                <div className="navigation-buttons">
+                    { this.props.onBack ?
+                        <Button text="Back" onClick={this.props.onBack} type="none" style={{'width': '30%'}}/> : null
+                    }
+                    <Button text='Next' onClick={this.handleSubmit} style={{'width': '70%'}}/>
+                </div>
                 <Modal
                     title="Select Secondary Objective"
                     show={this.state.selectorOpened}
