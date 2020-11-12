@@ -3,6 +3,7 @@ import Button from "../../Common/Button";
 import "../../Common/Form.css";
 import CompletedMission from "../../../Core/Domain/CompletedMission";
 import Select from "../../Common/Select";
+import "./MissionForm.css";
 
 
 class MissionForm extends React.Component
@@ -55,6 +56,16 @@ class MissionForm extends React.Component
     }
 
     render() {
+
+        let objectiveDescriptionBlock;
+        if (this.state.objective) {
+            objectiveDescriptionBlock = <div className="objective-description">
+                <span dangerouslySetInnerHTML={{__html: this.state.objective.description()}}/>
+            </div>
+        } else {
+            objectiveDescriptionBlock = null;
+        }
+
         return (
             <div className="mission-form" data-testid='mission-form'>
                 <form className="form-group">
@@ -70,6 +81,8 @@ class MissionForm extends React.Component
                             <span className="error-message">{this.state.errors.objective}</span> : ""
                         }
                     </div>
+
+                    {objectiveDescriptionBlock}
 
                     <div className="input-group">
                         <label htmlFor="mission-points">Points</label>

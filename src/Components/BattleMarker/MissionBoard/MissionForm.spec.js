@@ -13,6 +13,14 @@ describe('MissionForm', () => {
         new Objective("Rise the banner high", "risethebanner", "something decribing", "secondary", "main"),
     ]
 
+    it('Shows objective description when selected to score', () => {
+        const component = shallow(<MissionForm playerObjectives={objectives}/>)
+
+        component.find('[name="objective"]').simulate('change', "risethebanner")
+
+        expect(component.find('.objective-description').exists()).toBe(true);
+    })
+
     it('Submits when form is valid', () => {
         const callback = jest.fn()
         const component = shallow(<MissionForm onSubmit={callback} playerObjectives={objectives}/>)
