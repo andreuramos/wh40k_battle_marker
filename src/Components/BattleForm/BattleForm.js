@@ -4,6 +4,7 @@ import MissionSelector from "./MissionSelector";
 import SecondaryObjectivesForm from "./SecondaryObjectivesForm";
 import StartingPlayerForm from "./StartingPlayerForm";
 import "./BattleForm.css";
+import ProgressBar from "../Common/ProgressBar";
 
 const steps = [
     'player-names',
@@ -112,8 +113,11 @@ class BattleForm extends React.Component
                 step = null
         }
 
+        const percent = (steps.indexOf(this.state.step) + 1) / steps.length * 100;
+
         return (
             <div>
+                <ProgressBar percent={percent}/>
                 { step }
             </div>
         )
