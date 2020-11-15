@@ -39,4 +39,17 @@ describe('secondary objectives selector component', () => {
         expect(description.instance()).toBeVisible()
         expect(description.text()).toBe("Objective detailed description")
     })
+
+    it('shows input when custom objective is selected', () => {
+        let options = OPTIONS;
+        options.push({text: "Custom Objective", value:'custom', optiongroup: null})
+        const component = mount(<SecondaryObjectivesSelector options={options}/>)
+
+        component.find('.form-select').simulate('change', {target: {value: 'custom'}});
+
+        const name_input = component.find('.custom-objective-name')
+        const desc_input = component.find('.custom-objective-description')
+        expect(name_input.instance()).toBeVisible()
+        expect(desc_input.instance()).toBeVisible()
+    })
 })

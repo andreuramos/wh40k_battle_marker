@@ -4,3 +4,9 @@
     font-size: medium;
     background-color: black;
 }
+
+.custom-objective {
+    margin: 1em;
+    display: inline-grid;
+    flex-grow: 1;
+}

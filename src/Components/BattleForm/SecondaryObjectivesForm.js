@@ -5,6 +5,7 @@ import Modal from "../Common/Modal";
 import GetSecondaryObjectives from "../../Core/Application/GetSecondaryObjectives";
 import SecondaryObjectivesSelector from "./SecondaryObjectivesSelector";
 import GetObjectiveByKey from "../../Core/Application/GetObjectiveByKey";
+import Objective from "../../Core/Domain/Objective";
 
 class SecondaryObjectivesForm extends React.Component
 {
@@ -28,13 +29,23 @@ class SecondaryObjectivesForm extends React.Component
         GetSecondaryObjectives.execute().then((objectives) => {
             let all_objectives = objectives
             all_objectives.unshift(this.props.suggestedObjective)
+
+            const custom_objective = new Objective("Custom Objective", "custom", null, 'secondary', "Other");
+            all_objectives.push(custom_objective);
             this.setState({allObjectives: all_objectives})
             this.updateSelectableObjectives()
         })
     }
 
     updateSelectableObjectives = () => {
+        console.log(this.state.allObjectives)
         const selectableObjectives = this.state.allObjectives.filter((element) => {
+            console.log("Filtering objective", element)
+            if (element.category() === "Other") {
+                return true;
+            }
+            console.log("iterating anyways")
+
             for (let index in this.state.selectedObjectives) {
                 const selectedObjective = this.state.selectedObjectives[index]
                 if (selectedObjective !== null && element.category() === selectedObjective.category()) {
@@ -45,7 +56,12 @@ class SecondaryObjectivesForm extends React.Component
         }).map((element) => {
             return {text: element.name(), value:element.key(), optiongroup:element.category(), description:element.description()}
         })
+        console.log(selectableObjectives)
         this.setState({objectiveOptions: selectableObjectives})
+    }
+
+    generateObjectiveKey = (name) => {
+        return name.toLowerCase().replace(" ","_")
     }
 
     unselectObjective = (slot) => {
@@ -86,6 +102,23 @@ class SecondaryObjectivesForm extends React.Component
                 selectorOpened: false
             });
             this.updateSelectableObjectives()
+        }).catch(error => {
+            if (data.selectedObjective === "custom") {
+                const current_selecting_slot = this.state.selectingSlot
+                let selected_objectives = this.state.selectedObjectives
+                selected_objectives[current_selecting_slot] = new Objective(
+                    data.selectedObjectiveName,
+                    this.generateObjectiveKey(data.selectedObjectiveName),
+                    data.selectedObjectiveDescription,
+                    "secondary",
+                    "Other"
+                )
+                this.setState({
+                    selectedObjectives: selected_objectives,
+                    selectingSlot: null,
+                    selectorOpened: false
+                });
+            }
         });
     }
 
