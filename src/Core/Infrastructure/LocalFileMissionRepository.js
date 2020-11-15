@@ -3,12 +3,10 @@ import MissionBuilder from "../Domain/MissionBuilder";
 class LocalFileMissionRepository
 {
     data_file_path: string;
-    cached_missions: string;
 
     constructor(data_path)
     {
         this.data_file_path = data_path;
-        this.cached_missions = [];
     }
 
     async getAllMissions()
