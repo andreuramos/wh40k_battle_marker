@@ -26,7 +26,7 @@ export default class BattleBuilder
             }
         }
 
-        if (data.startingPlayer !== data.player1) {
+        if (data.starting_player !== data.player1) {
             return new Battle(player2, player1)
         }
         return new Battle(player1, player2)
