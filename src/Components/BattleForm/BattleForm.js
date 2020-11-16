@@ -63,11 +63,12 @@ class BattleForm extends React.Component
 
     submitStartingPlayerForm = (data) => {
         const startingPlayer = data.startingPlayer
-        this.setState({starting_player: startingPlayer})
-
-        if (this.props.onSubmit) {
-            this.props.onSubmit(this.state)
-        }
+        this.setState({starting_player: startingPlayer},() => {
+            console.log(this.state)
+            if (this.props.onSubmit) {
+                this.props.onSubmit(this.state)
+            }
+        })
     }
 
     goBack = () => {
