@@ -241,12 +241,40 @@
     "max_score": null,
     "scoring": [
       {
-        "description": "2 unidades en la zona de despliegue enemiga, a 6\" de dos bordes distintos",
+        "description": "+75% unidades",
+        "points": 15
+      },
+      {
+        "description": "+50% unidades",
+        "points": 10
+      },
+      {
+        "description": "+25% unidades",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "name": "Terreno Vital",
+    "key": "vital_ground",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Al final de la fase de mando, puntúa 3 si controlas el marcador en la zona de despliegue enemiga y 2 por cada marcador que no esté en ninguna zona de despliegue",
+    "trigger": "start_of_turn",
+    "skip_rounds": [1],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Control del marcador en zona enemiga",
         "points": 3
       },
       {
-        "description": "Uno de los bordes es el enemigo",
-        "points": 5
+        "description": "Control de un marcador fuera de las zonas de depliegue",
+        "points": 2
+      },
+      {
+        "description": "Control de dos marcadores fuera de las zonas de depliegue",
+        "points": 2
       }
     ]
   },

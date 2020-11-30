@@ -98,5 +98,15 @@
     "battle_size": "Fuerza de Choque",
     "pack": "Guerra Eterna",
     "description": ""
+  },
+  {
+    "name": "Guerra Frontal",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "vital_ground"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": ""
   }
 ]
