@@ -46,9 +46,10 @@ class SecondaryObjectivesSelector extends Component
                 />
 
                 { this.state.selectedObjective ?
-                    <div className="description-block">
-                        { this.state.selectedObjectiveDescription }
-                    </div> : null
+                    <div
+                        className="description-block"
+                        dangerouslySetInnerHTML={{ __html: this.state.selectedObjectiveDescription }}
+                    /> : null
                 }
 
                 <Button text='Select' onClick={this.submitForm} id="submit-selected-objective"/>
