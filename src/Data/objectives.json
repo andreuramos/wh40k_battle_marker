@@ -231,6 +231,26 @@
     ]
   },
   {
+    "name": "Minificar las Pérdidas",
+    "key": "minify_losses",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Al inicio de la partida suma el nº de unidades de tu ejército. Al final de la partida, según el nº de unidades que te quedan:<br><ul><li>15 puntos si te quedan 75% o más</li><li>10 puntos si te quedan el 50% o más</li><li>5 puntos si te quedan el 25% o más.</li></ul>Si una unidad se divide, al final computa como 2 unidades. Se excluyen del recuento las unidades que se hayan unido al ejército durante la batalla.",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "2 unidades en la zona de despliegue enemiga, a 6\" de dos bordes distintos",
+        "points": 3
+      },
+      {
+        "description": "Uno de los bordes es el enemigo",
+        "points": 5
+      }
+    ]
+  },
+  {
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",

@@ -88,5 +88,15 @@
     "battle_size": "Incursion",
     "pack": "Guerra Eterna",
     "description": "<b>Líneas de suministro:</b> Un jugador sólo recibe la bonificación de Puntos de Mando veteranos al inicio de su fase de mando si controla el marcador de su zona de despliegue.<br><br>"
+  },
+  {
+    "name": "Misión de Recuperación",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "minify_losses"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": ""
   }
 ]
