@@ -118,5 +118,15 @@
     "battle_size": "Fuerza de Choque",
     "pack": "Guerra Eterna",
     "description": "<b>Los Pilares:</b> las unidades de refuerzo no pueden desplegarse dentro del alcance de ningún marcador objetivo"
+  },
+  {
+    "name": "Tierra de Nadie",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "secure_no_mans_land"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": "<b>Tierra de Nadie:</b> si una unidad tiene una regla pre-batalla que permita desplegar en cualquier punto del campo, esa unidad debe desplegarse completamente en su zona de despliegue. Si una unidad tiene una regla pre-batalla que le permita realizar un movimiento, debe finalizarlo completamente dentro de su zona de despliegue"
   }
 ]

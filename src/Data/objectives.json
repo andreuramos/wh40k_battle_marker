@@ -307,6 +307,38 @@
     ]
   },
   {
+    "name": "Asegurar Tierra de Nadie",
+    "key": "secure_no_mans_land",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Al final del turno, si controlas el objetivo central obtén tantos puntos de victoria como la ronda actual (1 punto en la ronda 1, 2 en la ronda 2, ...)",
+    "trigger": "end_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Controlar Objetivo Central en la Ronda 1",
+        "points": 1
+      },
+      {
+        "description": "Controlar Objetivo Central en la Ronda 2",
+        "points": 2
+      },
+      {
+        "description": "Controlar Objetivo Central en la Ronda 3",
+        "points": 3
+      },
+      {
+        "description": "Controlar Objetivo Central en la Ronda 4",
+        "points": 4
+      },
+      {
+        "description": "Controlar Objetivo Central en la Ronda 5",
+        "points": 5
+      }
+    ]
+  },
+  {
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",
