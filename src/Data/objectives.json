@@ -279,6 +279,34 @@
     ]
   },
   {
+    "name": "Absorción",
+    "key": "siphon_power",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Una o más unidades pueden iniciar la acción al final de la fase de movimiento. Cada unidad que inicie la acción debe estar en alcance de un marcador distinto. No se puede empezar si hay unidades enemigas en alcance del marcador. La acción se completa al final de la fase de mando, dependdiendo de cuantas unidades han realizado la acción en esta fase:<br><ul><li>1 punto por realizar una acción de absorción</li><li>3 puntos por realizar dos acciones de absorción</li><li>6 puntos por realizar 3 acciones de absorción</li><li>10 puntos por realizar 4 acciones de absorción</li></ul>",
+    "trigger": "start_of_turn",
+    "skip_rounds": [],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Realizar una acción de absorción",
+        "points": 1
+      },
+      {
+        "description": "Realizar dos acciones de absorción",
+        "points": 3
+      },
+      {
+        "description": "Realizar tres acciones de absorción",
+        "points": 6
+      },
+      {
+        "description": "Realizar cuatro acciones de absorción",
+        "points": 10
+      }
+    ]
+  },
+  {
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",

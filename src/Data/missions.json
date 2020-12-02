@@ -108,5 +108,15 @@
     "battle_size": "Fuerza de Choque",
     "pack": "Guerra Eterna",
     "description": ""
+  },
+  {
+    "name": "Los Cuatro Pilares",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "siphon_power"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": "<b>Los Pilares:</b> las unidades de refuerzo no pueden desplegarse dentro del alcance de ningún marcador objetivo"
   }
 ]
