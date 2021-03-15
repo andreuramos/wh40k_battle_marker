@@ -128,5 +128,15 @@
     "battle_size": "Fuerza de Choque",
     "pack": "Guerra Eterna",
     "description": "<b>Tierra de Nadie:</b> si una unidad tiene una regla pre-batalla que permita desplegar en cualquier punto del campo, esa unidad debe desplegarse completamente en su zona de despliegue. Si una unidad tiene una regla pre-batalla que le permita realizar un movimiento, debe finalizarlo completamente dentro de su zona de despliegue"
+  },
+  {
+    "name": "Tierra Quemada",
+    "main_objective": "occupy_and_maintain",
+    "secondary_objectives": [
+      "raze_objective"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": "<b>Arrasar Objetivo</b>: 5 puntos por arrasar un objetivo (acción), 15 por arrasar 2 objetivos"
   }
 ]

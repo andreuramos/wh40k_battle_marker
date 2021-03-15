@@ -339,6 +339,26 @@
     ]
   },
   {
+    "name": "Arrasar Objetivo",
+    "key": "raze_objevtive",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Una unidad puede empezar a realizar la acción al inicio de la fase de movimiento si está dentro del alcance de un objetivo arrasable y no hay unidades enemigas al alcande de ese marcador. Un jugador sólo puede arrasar los marcadores de la zona de despliegue enemiga. Al final de la batalla puntúa 5 por arrasar 1 objetivo, o 15 por arrasar los dos",
+    "trigger": "end_of_battle",
+    "skip_rounds": [],
+    "max_score": 15,
+    "scoring": [
+      {
+        "description": "1 objetivo arrasado",
+        "points": 5
+      },
+      {
+        "description": "2 objetivos arrasados",
+        "points": 10
+      }
+    ]
+  },
+  {
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",
