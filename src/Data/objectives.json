@@ -359,6 +359,13 @@
     ]
   },
   {
+    "name": "Interceptar Datos",
+    "key": "intercept_data",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Una unidad puede empezar a realizar la acción al final de la fase de monivimiento si se encuentra al alcance de un marcador y no hay unidades enemigas al alcance de ese marcador. Se completa al final de la siguiente fase de mando y sumas un punto por cada marcador que controles en ese momento."
+  },
+  {
     "name": "Asesinato",
     "key": "assasinate",
     "type": "secondary",

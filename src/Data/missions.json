@@ -138,5 +138,15 @@
     "battle_size": "Fuerza de Choque",
     "pack": "Guerra Eterna",
     "description": "<b>Arrasar Objetivo</b>: 5 puntos por arrasar un objetivo (acción), 15 por arrasar 2 objetivos"
+  },
+  {
+    "name": "Inteligencia Vital",
+    "main_objective": "domination",
+    "secondary_objectives": [
+      "intercept_data"
+    ],
+    "battle_size": "Fuerza de Choque",
+    "pack": "Guerra Eterna",
+    "description": "<b>Interceptar Datos:</b> Los marcadores representan terminales de datos. Si controlas un marcador al final de la fase de mando, permanece bajo tu control hasta que el oponente lo capture, incluso si no tienes miniaturas a su alcance. Consigues puntos por realizar la acción <b>Interceptar Datos</b> en los marcadores y puntúas 1 por cada terminal que controlas al terminar la acción."
   }
 ]
