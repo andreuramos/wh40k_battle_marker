@@ -16,7 +16,7 @@ describe('BattleBuilder From form', () => {
     const form_data = {
         player1: "Andreu",
         player2: "Pedro",
-        startingPlayer: "Andreu",
+        starting_player: "Andreu",
         mission: mission,
         player1_objectives: secondary_objectives,
         player2_objectives: secondary_objectives
@@ -31,7 +31,7 @@ describe('BattleBuilder From form', () => {
 
     it('sets starting player as player 1', () => {
         let data = { ...form_data}
-        data.startingPlayer = "Pedro"
+        data.starting_player = "Pedro"
 
         const battle = BattleBuilder.fromForm(data)
 
