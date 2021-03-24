@@ -1,10 +1,10 @@
-import LocalFileMissionRepository from "../Infrastructure/LocalFileMissionRepository";
+import MissionRepository from "../Infrastructure/MissionRepository";
 
 class GetMainMissions
 {
     static async execute()
     {
-        const repo = new LocalFileMissionRepository();
+        const repo = new MissionRepository();
         return await repo.getAllMissions().then( missions => {
             return missions
         });
