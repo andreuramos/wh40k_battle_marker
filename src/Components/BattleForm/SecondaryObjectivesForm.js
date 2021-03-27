@@ -38,13 +38,10 @@ class SecondaryObjectivesForm extends React.Component
     }
 
     updateSelectableObjectives = () => {
-        console.log(this.state.allObjectives)
         const selectableObjectives = this.state.allObjectives.filter((element) => {
-            console.log("Filtering objective", element)
             if (element.category() === "Other") {
                 return true;
             }
-            console.log("iterating anyways")
 
             for (let index in this.state.selectedObjectives) {
                 const selectedObjective = this.state.selectedObjectives[index]
@@ -56,7 +53,6 @@ class SecondaryObjectivesForm extends React.Component
         }).map((element) => {
             return {text: element.name(), value:element.key(), optiongroup:element.category(), description:element.description()}
         })
-        console.log(selectableObjectives)
         this.setState({objectiveOptions: selectableObjectives})
     }
 
