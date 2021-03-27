@@ -44,5 +44,21 @@
         "points": 5
       }
     ]
+  },
+  {
+    "name": "Reconocimiento",
+    "key": "recognition",
+    "type": "secondary",
+    "category": "Secundaria Sugerida",
+    "description": "Obtén 5 puntos por controlar los dos marcadores que no están en zona de despliegue",
+    "trigger": "start_of_turn",
+    "skip_rounds": [1],
+    "max_score": null,
+    "scoring": [
+      {
+        "description": "Controlar los dos marcadores fuera de la zona de despliegue",
+        "points": 5
+      }
+    ]
   }
 ]

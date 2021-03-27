@@ -1,29 +1,32 @@
 import React from "react";
 import {TestMissionRepository} from "./TestMissionRepository";
-import MissionBuilder from "../Domain/MissionBuilder";
+import LocalFileObjectiveRepository from "./LocalFileObjectiveRepository";
+import Mission from "../Domain/Mission";
 
 describe("LocalFileMissionRepository", () => {
     it("returns an array of Missions", async () => {
         const repo = new TestMissionRepository()
+        const objectives_repo = new LocalFileObjectiveRepository('./testobjectives.json')
 
         await repo.getAllMissions().then( missions => {
-            expect(missions).toEqual([MissionBuilder.fromJson(  {
-                "name": "Ataque Incisivo",
-                "main_objective": "occupy_and_maintain",
-                "secondary_objectives": [
-                    "surgical_attack"
-                ],
-                "battle_size": "Patrulla",
-                "pack": "Guerra Eterna"
-            }), MissionBuilder.fromJson(  {
-                "name": "Escoltas",
-                "main_objective": "occupy_and_maintain",
-                "secondary_objectives": [
-                    "recognition"
-                ],
-                "battle_size": "Patrulla",
-                "pack": "Guerra Eterna"
-            })])
+            expect(missions).toEqual([
+                new Mission(
+                    "Ataque Incisivo",
+                    "Description 1",
+                    objectives_repo.findByKey("occupy_and_maintain"),
+                    objectives_repo.findByKey('domination'),
+                    "Guerra Eterna",
+                    "Patrulla"
+                ),
+                new Mission(
+                    "Escoltas",
+                    "Description 2",
+                    objectives_repo.findByKey("occupy_and_maintain"),
+                    objectives_repo.findByKey("recognition"),
+                    "Guerra Eterna",
+                    "Patrulla"
+                )
+            ])
         })
     });
 });

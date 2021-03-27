@@ -17,7 +17,7 @@ describe("Local file objective repository", () => {
     it("returns all when getall", () => {
         const objectives = repo.getAll()
 
-        expect(objectives.length).toBe(2);
+        expect(objectives.length).toBe(3);
     })
 
     it("searches by key", () => {

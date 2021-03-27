@@ -3,10 +3,11 @@
     "name": "Ataque Incisivo",
     "main_objective": "occupy_and_maintain",
     "secondary_objectives": [
-      "surgical_attack"
+      "domination"
     ],
     "battle_size": "Patrulla",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "Description 1"
   },
   {
     "name": "Escoltas",
@@ -15,6 +16,7 @@
       "recognition"
     ],
     "battle_size": "Patrulla",
-    "pack": "Guerra Eterna"
+    "pack": "Guerra Eterna",
+    "description": "Description 2"
   }
 ]
