@@ -1,16 +1,10 @@
 import Mission from "../Domain/Mission";
-import { ObjectiveRepository } from "../../Core/Infrastructure/ObjectiveRepository";
-import { MissionRepository } from '../../Core/Infrastructure/MissionRepository';
-import { TestMissionReader } from '../../Core/Infrastructure/TestMissionReader';
-import { TestObjectiveReader } from '../../Core/Infrastructure/TestObjectiveReader';
+import { TestFactory } from '../Infrastructure/TestFactory';
 
 describe("LocalFileMissionRepository", () => {
     it("returns an array of Missions", async () => {
-        const objectives_repo = new ObjectiveRepository(new TestObjectiveReader())
-        const repo = new MissionRepository(
-            new TestMissionReader(),
-            objectives_repo
-        );
+        const objectives_repo = TestFactory.newObjectiveRepository();
+        const repo = TestFactory.newMissionRepository();
 
         await repo.getAllMissions().then( missions => {
             expect(missions).toEqual([
