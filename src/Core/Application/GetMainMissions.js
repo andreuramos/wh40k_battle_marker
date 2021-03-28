@@ -1,13 +1,10 @@
-import { MissionRepository } from "../Infrastructure/MissionRepository";
-import { MissionReader } from '../Infrastructure/MisionReader';
-import { ObjectiveReader } from '../Infrastructure/ObjectiveReader';
-import { ObjectiveRepository } from '../Infrastructure/ObjectiveRepository';
+import { Factory } from '../Infrastructure/Factory';
 
 class GetMainMissions
 {
     static async execute()
     {
-        const repo = new MissionRepository(new MissionReader(), new ObjectiveRepository(new ObjectiveReader()));
+        const repo = Factory.newMissionRepository();
         return await repo.getAllMissions().then( missions => {
             return missions
         });

@@ -1,11 +1,10 @@
-import { ObjectiveRepository } from "../Infrastructure/ObjectiveRepository";
-import { ObjectiveReader } from '../Infrastructure/ObjectiveReader';
+import { Factory } from '../Infrastructure/Factory';
 
 class GetObjectiveByKey
 {
     static async execute(key)
     {
-        const repo = new ObjectiveRepository(new ObjectiveReader())
+        const repo = Factory.newMissionRepository();
         return await repo.findByKey(key);
     }
 }
