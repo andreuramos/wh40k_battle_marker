@@ -1,10 +1,11 @@
-import LocalFileObjectiveRepository from "./LocalFileObjectiveRepository";
+import { ObjectiveRepository } from "../../Core/Infrastructure/ObjectiveRepository";
+import { TestObjectiveReader } from '../../Core/Infrastructure/TestObjectiveReader';
 
 describe("Local file objective repository", () => {
     let repo
 
     beforeEach(() => {
-        repo = new LocalFileObjectiveRepository('./testobjectives.json');
+        repo = new ObjectiveRepository(new TestObjectiveReader());
     })
 
     it("returns an array of objectives", () => {
