@@ -1,10 +1,10 @@
-import MissionRepository from "../Infrastructure/MissionRepository";
+import { Factory } from '../Infrastructure/Factory';
 
 class GetMainMissions
 {
     static async execute()
     {
-        const repo = new MissionRepository();
+        const repo = Factory.newMissionRepository();
         return await repo.getAllMissions().then( missions => {
             return missions
         });

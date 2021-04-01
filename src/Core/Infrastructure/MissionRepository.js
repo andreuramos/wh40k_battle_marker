@@ -1,29 +1,21 @@
 import Mission from "../Domain/Mission";
-import LocalFileObjectiveRepository from "./LocalFileObjectiveRepository";
+import { ObjectiveRepository } from "../Infrastructure/ObjectiveRepository";
+import type { MissionReaderInterface } from '../Infrastructure/MissionReaderInterface';
 
-export default class MissionRepository
+export class MissionRepository
 {
-    DEFAULT_DATA_PATH = './../../Data/missions.json';
-
-    constructor() {
-        this.objectives_repo = new LocalFileObjectiveRepository()
+    constructor(reader: MissionReaderInterface, objectives_repository: ObjectiveRepository) {
+        this.reader = reader;
+        this.objectives_repo = objectives_repository;
     }
 
     async getAllMissions()
     {
-        let missions = []
-        let data
-        if (this.DEFAULT_DATA_PATH == './../../Data/missions.json') {
-            data = require('./../../Data/missions.json')
-        } else {
-            data = require(this.DEFAULT_DATA_PATH)
-        }
+        const data = JSON.parse(this.reader.read());
 
-        data.forEach(element => {
-            const mission = this._fromJson(element)
-            missions.push(mission);
-        })
-        return missions;
+        return data.map(element => {
+            return this._fromJson(element);
+        });
     }
 
     _fromJson(element): Mission

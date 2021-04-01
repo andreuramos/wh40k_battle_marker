@@ -1,12 +1,10 @@
-import React from "react";
-import {TestMissionRepository} from "./TestMissionRepository";
-import LocalFileObjectiveRepository from "./LocalFileObjectiveRepository";
 import Mission from "../Domain/Mission";
+import { TestFactory } from '../Infrastructure/TestFactory';
 
 describe("LocalFileMissionRepository", () => {
     it("returns an array of Missions", async () => {
-        const repo = new TestMissionRepository()
-        const objectives_repo = new LocalFileObjectiveRepository('./testobjectives.json')
+        const objectives_repo = TestFactory.newObjectiveRepository();
+        const repo = TestFactory.newMissionRepository();
 
         await repo.getAllMissions().then( missions => {
             expect(missions).toEqual([
